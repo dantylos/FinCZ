@@ -31,13 +31,22 @@
 
   <main>
     <div class="container">
-      <div class="posts-wrap">
-        <div class="search-block">
 
+      <div class="posts-wrap">
+        <div class="doPost-block">
+          <div class="avatar-and-post">
+            <div class="avatar"><img src="#" alt="Avatar"></div>
+
+            <input type="text" class="market-input" placeholder="Share your ideas about the markets here!"/>
+          </div>
+
+          <button class="post-button">Post</button>
         </div>
 
-        <div class="doPost-block">
+        <div class="search-block">
+          <input type="text" id="search-input" placeholder="Search Topics or Users...">
 
+          <ul id="results"></ul>
         </div>
 
         <div class="feed-block">
@@ -46,13 +55,16 @@
       </div>
 
       <div class="side-wrap">
-
+        
       </div>
+
     </div>
   </main>
 
   <footer>
 
   </footer>
+
+  <script src="../js/script.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@ $light-grey: #c0c0c0;
 $grey: #8e8e8e;
 $dark-grey: #454545;
 $black: #101010;
-$dark-blue: #000A1A;
+$dark-blue: #172130;
 $blue: #013E99;
 $light-yello: #fff41f;
 $yello: #e8b304;
@@ -27,7 +27,7 @@ $yello: #e8b304;
 
 // Header
 header{
-  opacity: 75%;
+  opacity: 85%;
   background-color: $dark-grey;
   max-height: 56px;
   padding: 8px 12px;
@@ -98,6 +98,83 @@ header{
 // Main
 main{
   background-color: $dark-blue;
-  height: 200vh;
   padding-top: 43px;
+
+  .container{
+    @include basic-flex;
+    align-items: baseline;
+
+    .posts-wrap{
+      width: 860px;
+      padding: 12px 24px 0;
+
+      .doPost-block{
+        border-bottom: 1px solid $grey;
+        padding-bottom: 16px;
+        display: flex;
+        flex-direction: column;
+
+        :nth-child(2){
+          align-items: end;
+        }
+
+        .avatar-and-post{
+          display: flex;
+          gap: 16px;
+          margin-bottom: 16px;
+
+          .avatar{
+            max-width: 52px;
+            max-height: 52px;
+            border-radius: 50%;
+
+            img{
+              display: block;
+              width: 100%;
+            }
+          }
+
+          .market-input{
+            width: 100%;
+            padding: 18px;
+            border-radius: 8px;
+            border: 1px solid $grey;
+            background-color: $dark-grey;
+          }
+        }
+
+        .post-button {
+          background-color: $blue;
+          color: $white;
+          padding: 10px 16px;
+          border: none;
+          font-weight: 700;
+          border-radius: 8px;
+          cursor: pointer;
+          max-width: 64px;
+          align-self: flex-end;
+        }
+      }
+
+      .search-block{
+        padding-top: 32px;
+        border-bottom: 1px solid $grey;
+        padding-bottom: 42px;
+
+        #search-input{
+          width: 100%;
+          padding: 14px;
+          border-radius: 8px;
+          border: 1px solid $grey;
+          background-color: $dark-grey;
+        }
+      }
+    }
+  }
+}
+
+
+// Footer
+footer{
+  height: 100vh;
 }
