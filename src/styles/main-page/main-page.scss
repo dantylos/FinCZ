@@ -27,16 +27,16 @@ $yello: #e8b304;
 
 // Header
 header{
-  opacity: 85%;
-  background-color: $dark-grey;
-  max-height: 56px;
-  padding: 8px 12px;
+  opacity: 70%;
+  background-color: $black;
+  padding: 10px 24px;
   position: fixed;
   width: calc(100vw);
 
   .container{
     max-width: inherit;
     position: relative;
+    height: 100%;
     @include basic-flex;
 
     .left-menu-list{
@@ -58,8 +58,6 @@ header{
     }
 
     .right-menu-list{
-      margin-right: 12px;
-
       ul{
         display: flex;
         gap: 24px;
@@ -80,10 +78,11 @@ header{
 
     .logo{
       position: absolute;
-      left: calc(50% - 21px);
+      left: calc(50% - 111px);
+      top: 0px;
 
-      .logo-img{
-        max-width: 42px;
+      logo-img{
+        max-width: 296px;
 
         img{
           display: block;
@@ -98,7 +97,7 @@ header{
 // Main
 main{
   background-color: $dark-blue;
-  padding-top: 43px;
+  padding-top: 103px;
 
   .container{
     @include basic-flex;

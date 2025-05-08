@@ -1,14 +1,14 @@
 header {
-  opacity: 85%;
-  background-color: #454545;
-  max-height: 56px;
-  padding: 8px 12px;
+  opacity: 70%;
+  background-color: #101010;
+  padding: 10px 24px;
   position: fixed;
   width: 100vw;
 }
 header .container {
   max-width: inherit;
   position: relative;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,9 +28,6 @@ header .container .left-menu-list ul li a:hover {
   transform: scale(1.05);
   color: #c0c0c0;
 }
-header .container .right-menu-list {
-  margin-right: 12px;
-}
 header .container .right-menu-list ul {
   display: flex;
   gap: 24px;
@@ -46,19 +43,20 @@ header .container .right-menu-list ul li a {
 }
 header .container .logo {
   position: absolute;
-  left: calc(50% - 21px);
+  left: calc(50% - 111px);
+  top: 0px;
 }
-header .container .logo .logo-img {
-  max-width: 42px;
+header .container .logo logo-img {
+  max-width: 296px;
 }
-header .container .logo .logo-img img {
+header .container .logo logo-img img {
   display: block;
   width: 100%;
 }
 
 main {
   background-color: #172130;
-  padding-top: 43px;
+  padding-top: 103px;
 }
 main .container {
   display: flex;
