@@ -32,7 +32,7 @@ header .container .right-menu-list ul {
   display: flex;
   gap: 24px;
 }
-header .container .right-menu-list ul li a {
+header .container .right-menu-list ul li #signInBtn {
   background-color: #e8b304;
   font-size: 16px;
   color: #fff;
@@ -120,6 +120,4 @@ main .container .posts-wrap .search-block #search-input {
   border-radius: 8px;
   border: 1px solid #8e8e8e;
   background-color: #454545;
-}
-
-/*# sourceMappingURL=main-page.css.map */
+}/*# sourceMappingURL=main-page.css.map */

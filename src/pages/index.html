@@ -24,7 +24,36 @@
       <div class="right-menu-list">
         <ul>
           <!--Make search component -->
-          <li><a href="#">Sign In</a></li>
+          <li>
+            <button id="signInBtn">Sign In</button>
+
+            <div id="overlay"></div>
+
+            <div id="popup" class="hidden">
+              <div class="form-container">
+                <button id="closeBtn"></button>
+
+                <h3>Register</h3>
+
+                <form>
+                  <label for="Username"> Username
+                    <input type="text" placeholder="Enter your Username" name="Username" required />
+                  </label>
+                  <label for="Name"> Name
+                    <input type="text" placeholder="Enter your Name" name="Name" />
+                  </label>
+                  <label for="Email">Email
+                    <input type="email" placeholder="Enter your email" name="Email" required />
+                  </label>
+                  <label for="Password">Password
+                    <input type="password" placeholder="Enter your password" name="Password" required />
+                  </label>
+                  <button type="submit">Register</button>
+                </form>
+              </div>
+
+            </div>
+          </li>
         </ul>
       </div>
 
