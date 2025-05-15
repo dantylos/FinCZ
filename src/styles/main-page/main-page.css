@@ -1,45 +1,48 @@
 header {
-  opacity: 70%;
+  opacity: 82%;
   background-color: #101010;
   padding: 10px 24px;
-  position: fixed;
-  width: 100vw;
+  position: sticky;
+  top: 0;
 }
 header .container {
   max-width: inherit;
   position: relative;
-  height: 100%;
+}
+header .container nav {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header .container .left-menu-list ul {
+header .container nav .left-menu-list {
   display: flex;
   gap: 56px;
 }
-header .container .left-menu-list ul li a {
+header .container nav .left-menu-list li a {
   color: #fff;
   text-transform: lowercase;
   font-size: 14px;
   letter-spacing: 2px;
   transition: 0.1s;
 }
-header .container .left-menu-list ul li a:hover {
+header .container nav .left-menu-list li a:hover {
   transform: scale(1.05);
   color: #c0c0c0;
 }
-header .container .right-menu-list ul {
+header .container nav .right-menu-list {
   display: flex;
   gap: 24px;
 }
-header .container .right-menu-list ul li .sign-in-btn {
+header .container nav .right-menu-list li .sign-in-btn {
   background-color: #e8b304;
   font-size: 16px;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 4px 8px;
-  letter-spacing: 1.2px;
-  font-weight: 400;
+  word-spacing: 3px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
   border: none;
   cursor: pointer;
 }
@@ -48,10 +51,10 @@ header .container .logo {
   left: calc(50% - 111px);
   top: -1px;
 }
-header .container .logo logo-img {
+header .container .logo .logo-img {
   max-width: 296px;
 }
-header .container .logo logo-img img {
+header .container .logo .logo-img img {
   display: block;
   width: 100%;
 }
@@ -76,9 +79,7 @@ header .container .logo logo-img img {
 .modal-overlay.active ~ main, .modal-overlay.active ~ header {
   filter: blur(6px);
   pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .modal {
@@ -103,7 +104,6 @@ header .container .logo logo-img img {
   display: flex;
   flex-direction: column;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
 }
 .modal form input {
   padding: 0.5rem;
@@ -124,7 +124,7 @@ header .container .logo logo-img img {
   transition: background 0.2s;
 }
 .modal form button[type=submit]:hover {
-  background: #ece3c9;
+  background: #e0d8e8;
 }
 .modal .close-btn {
   position: absolute;
@@ -156,11 +156,18 @@ header .container .logo logo-img img {
   color: #172130;
 }
 
+.error-message {
+  color: #e51313;
+  font-size: 0.8rem;
+  height: 1rem;
+  margin-top: -0.8rem;
+  display: block;
+}
+
 main {
-  background-color: #ece3c9;
+  background-color: #e0d8e8;
   padding-top: 64px;
   display: flex;
-  flex-direction: row-reverse;
 }
 main aside {
   flex: 1;
@@ -234,4 +241,6 @@ footer .container ul li a {
 footer .container ul li a:hover {
   transform: scale(1.05);
   color: #c0c0c0;
-}/*# sourceMappingURL=main-page.css.map */
+}
+
+/*# sourceMappingURL=main-page.css.map */

@@ -8,7 +8,8 @@ $dark-blue: #172130;
 $blue: #013E99;
 $light-yello: #fff41f;
 $yello: #e8b304;
-$main-back: #ece3c9;
+$main-back: #e0d8e8;
+$red: #e51313;
 
 
 // Mixins
@@ -28,20 +29,21 @@ $main-back: #ece3c9;
 
 // Header
 header{
-  opacity: 70%;
+  opacity: 82%;
   background-color: $black;
   padding: 10px 24px;
-  position: fixed;
-  width: calc(100vw);
+  position: sticky;
+  top: 0;
 
   .container{
     max-width: inherit;
     position: relative;
-    height: 100%;
-    @include basic-flex;
 
-    .left-menu-list{
-      ul{
+    nav{
+      width: 100%;
+      @include basic-flex;
+
+      .left-menu-list{
         display: flex;
         gap: 56px;
 
@@ -56,10 +58,8 @@ header{
           }
         }
       }
-    }
 
-    .right-menu-list{
-      ul{
+      .right-menu-list{
         display: flex;
         gap: 24px;
 
@@ -68,10 +68,11 @@ header{
             background-color: $yello;
             font-size: 16px;
             color: $white;
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 4px 8px;
-            letter-spacing: 1.2px;
-            font-weight: 400;
+            word-spacing: 3px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
             border: none;
             cursor: pointer;
           }
@@ -84,7 +85,7 @@ header{
       left: calc(50% - 111px);
       top: -1px;
 
-      logo-img{
+      .logo-img{
         max-width: 296px;
 
         img{
@@ -97,6 +98,7 @@ header{
 }
 
 
+// Modal
 .modal-overlay {
   display: none;
   position: fixed;
@@ -141,7 +143,6 @@ header{
       display: flex;
       flex-direction: column;
       font-size: 1rem;
-      margin-bottom: 0.5rem;
     }
 
     input {
@@ -202,13 +203,20 @@ header{
   }
 }
 
+.error-message {
+  color: $red;
+  font-size: 0.8rem;
+  height: 1rem;
+  margin-top: -0.8rem;
+  display: block;
+}
+
 
 // Main
 main{
   background-color: $main-back;
   padding-top: 64px;
   display: flex;
-  flex-direction: row-reverse;
 
   aside{
     flex: 1;
