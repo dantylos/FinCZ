@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FinCZ</title>
     <link rel="stylesheet" href="../styles/general/style.css">
+    <!-- Google reCAPTCHA v2 script - added localhost explicitly -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback" async defer></script>
+    <script type="text/javascript">
+      // This callback is called when reCAPTCHA is loaded
+      var onloadCallback = function() {
+        console.log("reCAPTCHA has loaded!");
+      };
+    </script>
 </head>
 <body>
 
@@ -62,6 +70,8 @@
           Password
           <input type="password" name="password" required>
         </label>
+        <!-- Google reCAPTCHA widget for registration -->
+        <div id="register-recaptcha-container"></div>
         <button type="submit">Register</button>
       </form>
       <p class="switch-form">
@@ -83,6 +93,8 @@
           Password
           <input type="password" name="password" required>
         </label>
+        <!-- Google reCAPTCHA widget with explicit rendering -->
+        <div id="recaptcha-container"></div>
         <button type="submit">Sign In</button>
       </form>
       <p class="switch-form">

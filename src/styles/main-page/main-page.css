@@ -112,6 +112,11 @@ header .container .logo logo-img img {
   font-size: 1rem;
   margin-top: 0.3rem;
 }
+/* Google reCAPTCHA styling */
+.modal form .g-recaptcha {
+  margin-top: 1rem;
+  align-self: center;
+}
 .modal form button[type=submit] {
   background: #e8b304;
   color: #fff;
