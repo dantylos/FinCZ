@@ -88,6 +88,15 @@
                    title="8-36 chars, min 1 uppercase, min 2 numbers, min 1 special (/.*#), no spaces, no >3 consecutive identical symbols or >4 consecutive numbers"
                    required />
           </label>
+          <label for="securityPhrase">Security Phrase
+            <input type="text"
+                   name="securityPhrase"
+                   id="securityPhrase"
+                   maxlength="40"
+                   minlength="8"
+                   title="8-40 chars"
+                   required />
+          </label>
           <span id="password-error" class="error-message"></span>
           <button type="submit">Register</button>
         </form>
@@ -122,6 +131,7 @@
           </label>
           <button type="submit">Log In</button>
         </form>
+        <a href="#" id="forgotPasswordLink">Forgot password?</a>
         <p class="switch-form">
           Don't have an account?
           <a href="#" id="showRegister">Register</a>
@@ -133,8 +143,6 @@
 
   <!-- Main -->
   <main>
-
-
     <section id="main-wrapper">
       <div class="container">
         <h2 id="add-post">Add a Post</h2>
