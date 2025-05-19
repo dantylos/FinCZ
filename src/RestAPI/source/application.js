@@ -1,8 +1,8 @@
- const express = require('express');
+require('dotenv').config();
+const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mainRouter = require('./RestAPI/index.js');
-require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;

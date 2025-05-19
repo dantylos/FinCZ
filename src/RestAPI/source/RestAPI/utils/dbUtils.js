@@ -1,12 +1,12 @@
 const { Pool } = require('pg');  // Пул для подключения к ДБ
 const pool = new Pool({
-    user: "client_service",
-    host: "localhost",
-    database: "postgres",
-    password: "jouhl99866",
-    port: "5432"
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
+    port: parseInt(process.env.DB_PORT, 10)
 });
-console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
+
 
 
 // Метод вызова запроса, возвращает массив

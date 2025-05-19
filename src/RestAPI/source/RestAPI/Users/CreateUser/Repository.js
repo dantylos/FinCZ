@@ -7,6 +7,7 @@ const createUser = async (user) => {
         'security_question', 'security_answer_hash', 'role',
         'profile_picture', 'agreement_signed_at'
     ];
+    console.log('Creating user in DB with:', user);
     return await createResource('users', user, fields);
 };
 
