@@ -1,4 +1,3 @@
-
 -- This code is based on the schema that we were drawing at the very start of the project
 
 -- Users table

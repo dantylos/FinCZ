@@ -44,7 +44,7 @@
       <!-- Registration Form -->
       <div id="registerBlock">
         <h2>Register</h2>
-        <form id="registrationForm">
+        <form id="registrationForm" method="post" name="register">
           <label for="name">
             Name
             <input type="text"
@@ -100,7 +100,7 @@
       <!-- Log In Form -->
       <div id="signInBlock" style="display:none;">
         <h2>Log In</h2>
-        <form id="signInForm">
+        <form id="signInForm" method="post" name="login">
           <label for="login-user">
             Username or Email
             <input type="text"
@@ -186,5 +186,6 @@
   </footer>
 
   <script src="../js/script.js"></script>
+  <script src="../js/form.js"></script>
 </body>
 </html>
