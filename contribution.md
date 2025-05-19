@@ -16,4 +16,4 @@ Steps of uploading changes to the main branch on repository:
 2. Checking if everything works and creating `commit` with massage of the changes
 3. Check if everything added properly using `git status` command in terminal
 4. If everything is ready `push` your changes into your brunch on the repository
-5. On github responsible person checks if the changes are proper and merge them with the `main` branch
+5. On GitHub responsible person checks if the changes are proper and merge them with the `main` branch
