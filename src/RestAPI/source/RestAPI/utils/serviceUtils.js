@@ -1,11 +1,11 @@
-// Общий сервис для фич по добавлению ресурса
+// Generic service for creating any resource
 const createGenericService = (repositoryMethod) => {
     return async (data) => {
-        return await repositoryMethod(data);    // TODO Разобрать какая валидация данных нужна
+        return await repositoryMethod(data);
     };
 };
 
-// Общий сервис для фич по удалению ресурса
+// Generic service for deleting any resource
 const deleteGenericService = (repositoryMethod) => {
     return async (id) => {
         return await repositoryMethod(id);
