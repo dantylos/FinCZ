@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinCZ</title>
+    <link rel="stylesheet" href="../styles/general/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      
+      <a class="logo" href="main-page.html"><div class="logo-img"><img src="../images/logo1.svg" alt="Logo"></div></a>
+
+      <nav>
+          <ul class="left-menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Account</a></li>
+            <li><a href="#">Topics</a></li>
+          </ul>
+
+          <ul class="right-menu-list">
+            <!--Make search component -->
+            <li>
+              <search>
+
+              </search>
+            </li>
+            <li>
+              <button id="signInBtn" class="sign-in-btn">Sign In</button>
+            </li>
+          </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Registration -->
+  <div id="modalOverlay" class="modal-overlay" tabindex="-1">
+    <div class="modal">
+      <button class="close-btn" id="closeModalBtn" aria-label="Close">&times;</button>
+
+      <!-- Registration Form -->
+      <div id="registerBlock">
+        <h2>Register</h2>
+        <form id="registrationForm" method="post" name="register">
+          <label for="name">
+            Name
+            <input type="text"
+                   id="name"
+                   name="name"
+                   maxlength="40"
+                   pattern="^[a-zA-ZáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ ]+$"
+                   title="Up to 40 letters (including Czech letters) and spaces only, no numbers or special characters"
+                   required />
+          </label>
+          <span id="name-error" class="error-message"></span>
+          <label for="username">
+            Username
+            <input type="text"
+                   id="username"
+                   name="username"
+                   maxlength="30"
+                   pattern="^[a-z0-9]+$"
+                   title="Lowercase letters and numbers only, no spaces"
+                   required />
+          </label>
+          <span id="username-error" class="error-message"></span>
+          <label for="email">
+            Email
+            <input type="email"
+                   id="email"
+                   name="email"
+                   autocomplete="off"
+                   title="Valid email from allowed domains"
+                   required />
+          </label>
+          <span id="email-error" class="error-message"></span>
+          <label for="password">
+            Password
+            <input type="password"
+                   id="password"
+                   name="password"
+                   minlength="8"
+                   maxlength="36"
+                   autocomplete="off"
+                   title="8-36 chars, min 1 uppercase, min 2 numbers, min 1 special (/.*#), no spaces, no >3 consecutive identical symbols or >4 consecutive numbers"
+                   required />
+          </label>
+          <label for="securityPhrase">Security Phrase
+            <input type="text"
+                   name="securityPhrase"
+                   id="securityPhrase"
+                   maxlength="40"
+                   minlength="8"
+                   title="8-40 chars"
+                   required />
+          </label>
+          <span id="password-error" class="error-message"></span>
+          <button type="submit">Register</button>
+        </form>
+        <p class="switch-form">
+          Already have an account?
+          <a href="#" id="showSignIn">Log In</a>
+        </p>
+      </div>
+
+      <!-- Log In Form -->
+      <div id="signInBlock" style="display:none;">
+        <h2>Log In</h2>
+        <form id="signInForm" method="post" name="login">
+          <label for="login-user">
+            Username or Email
+            <input type="text"
+                   id="login-user"
+                   name="login-user"
+                   autocomplete="username"
+                   required
+            />
+          </label>
+          <label for="password">
+            Password
+            <input type="password"
+                   id="login-password"
+                   name="login-password"
+                   autocomplete="current-password"
+                   required
+            />
+            <span class="toggle-password" tabindex="0" aria-label="Show password"></span>
+          </label>
+          <button type="submit">Log In</button>
+        </form>
+        <a href="#" id="forgotPasswordLink">Forgot password?</a>
+        <p class="switch-form">
+          Don't have an account?
+          <a href="#" id="showRegister">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Main -->
+  <main>
+    <section id="main-wrapper">
+      <div class="container">
+        <h2 id="add-post">Add a Post</h2>
+        <form id="post-form">
+          <label>
+            <textarea name="post-content" placeholder="How do you feel about the markets today? Share your ideas here!" required></textarea>
+          </label>
+          <button type="submit">Post</button>
+        </form>
+
+        <article class="post">
+
+        </article>
+      </div>
+    </section>
+
+    <aside>
+    <!-- Topics -->
+    <div class="box">
+      <h2>🔥 Trending Topics (r/stocks)</h2>
+      <ul class="trending-list" id="trending-list">
+        <li>Loading...</li>
+      </ul>
+    </div>
+
+    <!-- TradingView Widget Full Code -->
+    <div class="box">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright">
+          <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank">
+            <span class="blue-text">Track all markets on TradingView</span>
+          </a>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
+      </div>
+    </div>
+  </aside>
+  </main>
+
+  <footer>
+    <div class="container">
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">contact</a></li>
+        <li><a href="#">help</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/form.js"></script>
+</body>
+</html>
