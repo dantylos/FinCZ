@@ -14,10 +14,18 @@
 //
 // module.exports = router;
 
-
-const { createResourceRouter } = require('../../utils/routerUtils.js');
+const express = require('express');
+const { createUser } = require('./Repository.js');
 const { createUserService } = require('./Service');
+const { asyncHandler } = require('../../utils/routerUtils.js');
 
-const userRouter = createResourceRouter('/create', createUserService, 'user');
+const router = express.Router();
 
-module.exports = userRouter;
+const userService = createUserService(createUser);
+
+router.post('/create', asyncHandler(async (req, res) => {
+    const user = await userService(req.body);
+    res.status(201).json(user);
+}));
+
+module.exports = router;
