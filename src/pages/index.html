@@ -95,7 +95,7 @@
     </div>
 
     <div class="sidebar">
-      <!-- Trending Topics from Reddit -->
+      
       <div class="box">
         <h2>🔥 Trending Topics (r/stocks)</h2>
         <ul class="trending-list" id="trending-list">
@@ -103,7 +103,7 @@
         </ul>
       </div>
 
-      <!-- TradingView Widget Full Code -->
+      
       <div class="box">
         <div class="tradingview-widget-container">
           <div class="tradingview-widget-container__widget"></div>
@@ -191,7 +191,7 @@
     </div>
   </div>
 
-  <!-- Reddit Trending Topics Script -->
+ 
   <script>
     async function loadTrendingTopics() {
       try {
@@ -221,11 +221,12 @@
       }
     }
 
-    // Initial load
+   
     loadTrendingTopics();
 
-    // Auto-refresh every 3 hours (10,800,000 milliseconds)
+    
     setInterval(loadTrendingTopics, 10800000);
   </script>
 </body>
 </html>
+
