@@ -172,11 +172,11 @@
       <div id="registerBlock">
         <h2>Register</h2>
         <form id="registrationForm" method="post" name="register">
-          <label for="name">
+          <label for="legal_names">
             Name
             <input type="text"
-                   id="name"
-                   name="name"
+                   id="legal_names"
+                   name="legal_names"
                    maxlength="40"
                    pattern="^[a-zA-ZáčďéěíňóřšťúůýžÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ ]+$"
                    title="Up to 40 letters (including Czech letters) and spaces only, no numbers or special characters"
@@ -215,15 +215,24 @@
                    title="8-36 chars, min 1 uppercase, min 2 numbers, min 1 special (/.*#), no spaces, no >3 consecutive identical symbols or >4 consecutive numbers"
                    required />
           </label>
-          <label for="securityPhrase">Security Phrase
+          <label for="security_question">
+            Security Question
             <input type="text"
-                   name="securityPhrase"
-                   id="securityPhrase"
-                   maxlength="40"
-                   minlength="8"
-                   title="8-40 chars"
+                   name="security_question"
+                   id="security_question"
+                   maxlength="100"
                    required />
           </label>
+
+          <label for="security_answer">
+            Security Answer
+            <input type="text"
+                   name="security_answer"
+                   id="security_answer"
+                   maxlength="100"
+                   required />
+          </label>
+
           <span id="password-error" class="error-message"></span>
           <button type="submit">Register</button>
         </form>
