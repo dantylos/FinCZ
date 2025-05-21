@@ -12,21 +12,21 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Логгирование
+// Basic logging middleware
 app.use((req, res, next) => {
     console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
     next();
 });
 
-// Основной роутер
+// Main router
 app.use('/api', mainRouter);
 
-// Обработка ошибки 404
+// 404 error handler
 app.use((req, res) => {
     res.status(404).json({ error: 'Route not found' });
 });
 
-// Обработка общих ошибок
+// Basic error handler
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({
@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Запуск сервака
+// Server start
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
