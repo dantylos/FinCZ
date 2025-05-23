@@ -35,14 +35,14 @@ header .container nav .right-menu-list {
   gap: 1.5rem;
 }
 header .container nav .right-menu-list li .sign-in-btn {
-  background-color: #fff41f;
+  background-color: #e8b304;
   font-size: 1rem;
-  color: #101010;
+  color: #fff;
   border-radius: 0.5rem;
   padding: 0.3rem 0.5rem 0.25rem;
   word-spacing: 0.15rem;
   letter-spacing: 0.1rem;
-  font-weight: 700;
+  font-weight: 500;
   border: none;
   cursor: pointer;
 }
@@ -123,6 +123,58 @@ main #main-wrapper .container .search-input:focus {
   outline: none;
   background-color: rgba(255, 255, 255, 0.1);
 }
+main #main-wrapper .container .thread-creator {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main #main-wrapper .container .thread-creator #threadInput {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #454545;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+main #main-wrapper .container .thread-creator #threadInput::placeholder {
+  color: #c0c0c0;
+  font-size: 14px;
+}
+main #main-wrapper .container .thread-creator #threadInput:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+main #main-wrapper .container .thread-creator #postThreadBtn {
+  align-self: end;
+  background-color: #e8b304;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.15s;
+  width: 5rem;
+}
+main #main-wrapper .container .thread-creator #postThreadBtn:hover {
+  background-color: #fff41f;
+  color: #101010;
+}
+main #main-wrapper .container #threadList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main #main-wrapper .container .thread-item {
+  background: #23242a;
+  color: #fff;
+  padding: 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
 main #main-wrapper .container .visually-hidden {
   position: absolute;
   width: 1px;
@@ -138,7 +190,7 @@ main aside {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
+  padding: 15px 20px;
   min-width: 320px;
   max-width: 380px;
 }
