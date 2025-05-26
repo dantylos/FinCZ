@@ -1,10 +1,10 @@
 {
   "name": "forum-api",
   "version": "1.0.0",
-  "main": "source/application.js",
+  "main": "application.js",
   "scripts": {
-    "start": "node source/application.js",
-    "dev": "nodemon source/application.js",
+    "start": "node application.js",
+    "dev": "nodemon application.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
