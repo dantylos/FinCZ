@@ -29,7 +29,7 @@ async function createThread(threadData) {
         } else {
             alert('Thread created successfully!');
             console.log('Created thread:', result);
-            // здесь можно обновить UI, например, добавить тред в список
+            window.location.href = 'index.html';
             return result;
         }
     } catch (error) {

@@ -1,7 +1,10 @@
-const { executeFunctionCall } = require('../../utils/dbUtils.js');
+const express = require('express');
+const { deleteResourceRouter } = require('../../utils/routerUtils.js');
+const { deletePostService } = require('./Service.js'); // Предполагается, что сервис находится в этом же каталоге
 
-const deletePost = async (postId) => {
-    return await executeFunctionCall('delete_post', [postId]);
-};
+const postDeleteRouter = deleteResourceRouter('/:id', deletePostService, 'post');
 
-module.exports = { deletePost };
+const router = express.Router();
+router.use('/', postDeleteRouter); // Монтируем deleteResourceRouter по корневому пути этого роутера
+
+module.exports = router;
