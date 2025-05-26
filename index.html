@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinCZ</title>
+    <title>FinanceCZ</title>
     <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
@@ -292,7 +292,7 @@
           </button>
 
           <form role="search" class="search-form">
-            <label for="search-input" class="visually-hidden">Post or user search</label>
+            <label for="search-input" class="visually-hidden"></label>
               <input type="search"
                      id="search-input"
                      class="search-input"
@@ -303,12 +303,38 @@
         </div>
 
         <div class="thread-creator">
-          <label for="threadInput"></label>
-          <input type="text"
-                 id="threadInput"
-                 placeholder="What do you think about markets today? Share your ideas here..."
-                 maxlength="400" />
-          <button id="postThreadBtn">Post</button>
+          <form id="createThreadForm" name="CreateThread">
+
+            <label for="title">
+              <input type="text"
+                     id="title"
+                     name="title"
+                     placeholder="Thread title"
+                     required
+                     maxlength="100" />
+            </label>
+
+            <label for="thread-body">
+              <textarea name="body"
+                        id="thread-body"
+                        placeholder="Write your opinion or analysis here..."
+                        required
+                        maxlength="1000"></textarea>
+            </label>
+
+            <label for="category">
+              <select name="category" id="category" required>
+                <option value="">-- Select category --</option>
+                <option value="stocks">Stocks</option>
+                <option value="crypto">Crypto</option>
+                <option value="forex">Forex</option>
+                <option value="indices">Indices</option>
+                <option value="general">General</option>
+              </select>
+            </label>
+
+            <button id="postThreadBtn" type="submit">Post</button>
+          </form>
         </div>
 
         <ul id="threadList">
@@ -340,22 +366,14 @@
     </section>
 
     <aside>
-    <!-- Topics -->
-    <div class="box">
-      <h2>🔥 Trending Topics (r/stocks)</h2>
-      <ul class="trending-list" id="trending-list">
-        <li>Loading...</li>
-      </ul>
-    </div>
-
     <!-- TradingView Widget Full Code -->
-    <div class="box">
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
+      <div class="box">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async></script>
+        </div>
       </div>
-    </div>
-  </aside>
+    </aside>
   </main>
 
 
@@ -376,6 +394,7 @@
   <script src="src/js/modules/auth-modal.js"></script>
   <script src="src/js/modules/validation.js"></script>
   <script src="src/js/modules/search.js"></script>
+  <script src="src/js/modules/thread-creator.js"></script>
   <script src="src/js/utils/dom-utils.js"></script>
   <script src="src/js/modules/security-question.js"></script>
 
