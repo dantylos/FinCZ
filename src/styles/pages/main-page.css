@@ -68,7 +68,6 @@ main {
 }
 main #main-wrapper {
   flex: 1 1 0;
-  padding: 1rem;
   max-width: 860px;
 }
 main #main-wrapper .container h2 {
@@ -124,29 +123,60 @@ main #main-wrapper .container .search-input:focus {
   background-color: rgba(255, 255, 255, 0.1);
 }
 main #main-wrapper .container .thread-creator {
-  margin-top: 4rem;
+  width: 100%;
+  margin: 3rem auto;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  border-top: 1px solid #c0c0c0;
+  padding-top: 2rem;
+}
+main #main-wrapper .container .thread-creator #createThreadForm {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
-main #main-wrapper .container .thread-creator #threadInput {
-  padding: 1rem 1.5rem;
-  border: none;
+main #main-wrapper .container .thread-creator #createThreadForm label {
+  display: block;
+  width: 100%;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label input[type=text],
+main #main-wrapper .container .thread-creator #createThreadForm label textarea,
+main #main-wrapper .container .thread-creator #createThreadForm label select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #8e8e8e;
   border-radius: 12px;
   background-color: #454545;
-  color: #fff;
+  color: #e0e0e0;
   font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label input[type=text]::placeholder,
+main #main-wrapper .container .thread-creator #createThreadForm label textarea::placeholder,
+main #main-wrapper .container .thread-creator #createThreadForm label select::placeholder {
+  color: #8a8a8a;
+  font-style: italic;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label input[type=text]:focus,
+main #main-wrapper .container .thread-creator #createThreadForm label textarea:focus,
+main #main-wrapper .container .thread-creator #createThreadForm label select:focus {
   outline: none;
+  border-color: #5bbaff;
+  box-shadow: 0 0 6px rgba(91, 186, 255, 0.6666666667);
+  background-color: #262a2f;
 }
-main #main-wrapper .container .thread-creator #threadInput::placeholder {
-  color: #c0c0c0;
-  font-size: 14px;
+main #main-wrapper .container .thread-creator #createThreadForm label textarea {
+  min-height: 120px;
+  resize: none;
 }
-main #main-wrapper .container .thread-creator #threadInput:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.1);
+main #main-wrapper .container .thread-creator #createThreadForm label select {
+  cursor: pointer;
+  appearance: none;
+  background-size: 16px 16px;
 }
-main #main-wrapper .container .thread-creator #postThreadBtn {
+main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn {
   align-self: end;
   background-color: #e8b304;
   color: #fff;
@@ -158,18 +188,26 @@ main #main-wrapper .container .thread-creator #postThreadBtn {
   transition: 0.15s;
   width: 5rem;
 }
-main #main-wrapper .container .thread-creator #postThreadBtn:hover {
+main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn:hover {
   background-color: #fff41f;
   color: #101010;
 }
+main #main-wrapper .container .thread-creator .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 main #main-wrapper .container #threadList {
   list-style: none;
-  padding: 0;
-  margin: 0;
   border-top: 1px solid #c0c0c0;
   margin-top: 4rem;
 }
-main #main-wrapper .container .thread-item {
+main #main-wrapper .container #threadList .thread-item {
   margin-top: 2rem;
   background: #013E99;
   color: #fff;
@@ -184,67 +222,55 @@ main #main-wrapper .container .thread-item {
   box-sizing: border-box;
   position: relative;
 }
-main #main-wrapper .container .thread-item a {
+main #main-wrapper .container #threadList .thread-item a {
   inset: 0;
   content: "";
   position: absolute;
 }
-main #main-wrapper .container .thread-item__info {
+main #main-wrapper .container #threadList .thread-item__info {
   color: #54aafc;
   text-align: left;
-  min-width: 340px;
   position: relative;
 }
-main #main-wrapper .container .thread-item__info .thread-item__name {
+main #main-wrapper .container #threadList .thread-item__info .thread-item__name {
   font-size: 1.5rem;
   font-weight: 600;
   display: block;
 }
-main #main-wrapper .container .thread-item__info .thread-item__creator {
+main #main-wrapper .container #threadList .thread-item__info .thread-item__creator {
   font-size: 0.8rem;
   display: block;
 }
-main #main-wrapper .container .thread-item__info .thread-item__created {
+main #main-wrapper .container #threadList .thread-item__info .thread-item__created {
   margin-top: 10px;
   font-size: 1rem;
   display: flex;
   gap: 7px;
   align-items: center;
 }
-main #main-wrapper .container .thread-item__info .thread-item__created-label {
+main #main-wrapper .container #threadList .thread-item__info .thread-item__created-label {
   font-style: italic;
 }
-main #main-wrapper .container .thread-item__info .thread-item__created-date {
+main #main-wrapper .container #threadList .thread-item__info .thread-item__created-date {
   font-weight: bold;
   letter-spacing: 0.5px;
   font-size: 1.1rem;
 }
-main #main-wrapper .container .thread-item__lastpost {
+main #main-wrapper .container #threadList .thread-item__lastpost {
   text-align: right;
   color: #ff8a9e;
-  min-width: 260px;
   position: relative;
 }
-main #main-wrapper .container .thread-item__lastpost .thread-item__lastpost-title {
+main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-title {
   font-size: 1.18rem;
   font-weight: 600;
   display: block;
 }
-main #main-wrapper .container .thread-item__lastpost .thread-item__lastpost-date {
+main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-date {
   font-size: 1.1rem;
   font-style: italic;
   display: block;
   margin-top: 12px;
-}
-main #main-wrapper .container .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
 }
 main aside {
   flex: 0 0 1;
@@ -253,40 +279,15 @@ main aside {
   gap: 20px;
   padding: 15px 20px;
   min-width: 320px;
-  max-width: 380px;
+  max-width: 320px;
 }
 main aside .box {
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  padding: 15px 20px;
+  background-color: black;
 }
-main aside .box h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #00e676;
-}
-main aside .box .trending-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-main aside .box .trending-list li {
-  padding: 8px 0;
-  border-bottom: 1px solid #2c2c2c;
-}
-main aside .box .trending-list a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-main aside .box .trending-list a:hover {
-  color: #29b6f6;
-}
-main aside .tradingview-widget-container {
-  width: 100%;
+main aside .box .tradingview-widget-container {
   max-width: 100%;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 footer {
