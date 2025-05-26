@@ -16,14 +16,9 @@ const loginUser = async ({ username, password }) => {
     // Генерация JWT с userId и username
     const token = generateToken({ userId: user.id, username: user.username });
 
-    return {
-        token,
-        user: {
-            id: user.id,
-            username: user.username,
-            email: user.email,
-        }
-    };
+    // Возвращаем только данные пользователя без пароля
+    const { password_hash, ...userWithoutPassword } = user;
+    return userWithoutPassword;
 };
 
 module.exports = {

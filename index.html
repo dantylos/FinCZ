@@ -303,13 +303,31 @@
         </div>
 
         <div class="thread-creator">
-          <label for="threadInput"></label>
-          <input type="text"
-                 id="threadInput"
-                 placeholder="What do you think about markets today? Share your ideas here..."
-                 maxlength="400" />
-          <button id="postThreadBtn">Post</button>
+          <form id="createThreadForm">
+            <input type="text"
+                   name="title"
+                   placeholder="Thread title"
+                   required
+                   maxlength="100" />
+
+            <textarea name="body"
+                      placeholder="Write your opinion or analysis here..."
+                      required
+                      maxlength="1000"></textarea>
+
+            <select name="category" required>
+              <option value="">-- Select category --</option>
+              <option value="stocks">Stocks</option>
+              <option value="crypto">Crypto</option>
+              <option value="forex">Forex</option>
+              <option value="indices">Indices</option>
+              <option value="general">General</option>
+            </select>
+
+            <button type="submit">Post</button>
+          </form>
         </div>
+
         <ul id="threadList"></ul>
       </div>
     </section>

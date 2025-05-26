@@ -1,3 +1,5 @@
+import { AuthUtils } from './authUtils.js';
+
 export function initFormHandler() {
 
     // Registration form handler
@@ -154,7 +156,7 @@ export function initFormHandler() {
                 } else {
                     alert('Login successful!');
                     // Store auth token
-                    localStorage.setItem('authToken', result.token);
+                    AuthUtils.setToken(result.token);
 
                     // Close a modal and redirect
                     const modalOverlay = document.getElementById('modalOverlay');
