@@ -3,6 +3,7 @@ const mainRouter = express.Router();
 
 // Импорт роутеров для пользователей
 const userCreateRouter = require('./Users/CreateUser/Router.js');
+const userLoginRouter = require('./Users/UserAuthentication/Router.js');
 
 // Импорт роутеров для тредов
 const threadCreateRouter = require('./Threads/CreateThread/Router.js');
@@ -18,6 +19,7 @@ const commentDeleteRouter = require('./Comments/DeleteComment/Router.js');
 
 // Регистрация роутеров для юзеров
 mainRouter.use('/users', userCreateRouter);
+mainRouter.use('/users', userLoginRouter);
 
 // Регистрация роутеров для тредов
 mainRouter.use('/threads', threadCreateRouter);
