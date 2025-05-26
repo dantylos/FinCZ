@@ -1,10 +1,11 @@
+// Posts/CreatePost/Router.js
 const express = require('express');
-const { deleteResourceRouter } = require('../../utils/routerUtils.js');
-const { deletePostService } = require('./Service.js'); // Предполагается, что сервис находится в этом же каталоге
+const { createResourceRouter } = require('../../utils/routerUtils.js');
+const { createPostService } = require('./Service.js');
 
-const postDeleteRouter = deleteResourceRouter('/:id', deletePostService, 'post');
+const postCreateRouter = createResourceRouter('/', createPostService, 'post');
 
 const router = express.Router();
-router.use('/', postDeleteRouter); // Монтируем deleteResourceRouter по корневому пути этого роутера
+router.use('/', postCreateRouter); // POST-запросы пойдут на '/'
 
 module.exports = router;

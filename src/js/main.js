@@ -6,6 +6,7 @@ import { initValidation } from './modules/validation.js';
 import { initSecurityQuestion } from './modules/security-question.js';
 import { initFormHandler } from './modules/form-handler.js';
 import { initThreadCreator } from './modules/thread-creator.js';
+import { initThreadLoader } from './modules/thread-loader.js';
 initSecurityQuestion();
 
 // Initialize all modules once DOM is fully loaded
@@ -17,4 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initValidation();
   initFormHandler();
   initThreadCreator();
+  initThreadLoader();
 });

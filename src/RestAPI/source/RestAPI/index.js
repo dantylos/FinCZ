@@ -8,6 +8,7 @@ const userLoginRouter = require('./Users/UserAuthentication/Router.js');
 // Импорт роутеров для тредов
 const threadCreateRouter = require('./Threads/CreateThread/Router.js');
 const threadDeleteRouter = require('./Threads/DeleteThread/Router.js');
+const threadGetAllRouter = require('./Threads/GetAllThreads/Router.js');
 
 // Импорт роутеров для постов
 const postCreateRouter = require('./Posts/CreatePost/Router.js');
@@ -24,10 +25,11 @@ mainRouter.use('/users', userLoginRouter);
 // Регистрация роутеров для тредов
 mainRouter.use('/threads', threadCreateRouter);
 mainRouter.use('/threads', threadDeleteRouter);
+mainRouter.use('/threads', threadGetAllRouter);
 
 // Регистрация роутеров для постов
 mainRouter.use('/posts', postCreateRouter);
-// mainRouter.use('/posts', postDeleteRouter);
+mainRouter.use('/posts', postDeleteRouter);
 
 // Регистрация роутеров для комментариев
 mainRouter.use('/comments', commentCreateRouter);
