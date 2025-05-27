@@ -26,7 +26,26 @@ const geoLimiter = rateLimit({
 });
 
 // Basic middleware
-app.use(cors());
+const githubPagesFrontendUrl = 'https://dantylos.github.io/FinanceCZ/';
+
+const allowedOrigins = [
+    'http://localhost:3000',
+    githubPagesFrontendUrl
+];
+
+// Настройка CORS
+app.use(cors({
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
