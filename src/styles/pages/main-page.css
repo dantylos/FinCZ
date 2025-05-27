@@ -4,6 +4,7 @@ header {
   padding: 0.5rem 1.5rem;
   position: sticky;
   top: 0;
+  z-index: 1001;
 }
 header .container {
   max-width: inherit;
