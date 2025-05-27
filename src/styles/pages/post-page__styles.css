@@ -1,0 +1,103 @@
+.post-main section {
+  width: 100%;
+}
+.post-main .container {
+  max-width: 740px;
+}
+.post-main .container .post-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #444;
+  padding: 1rem;
+  color: white;
+}
+.post-main .container .post-item .post-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #2196f3;
+}
+.post-main .container .post-item .post-header .post-timestamp {
+  font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.post-main .container .post-item .post-body {
+  border: 1px solid #8e8e8e;
+  border-radius: 0.5rem;
+  padding: 12px;
+}
+.post-main .container .post-item .post-body .post-content-preview {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  min-height: 120px;
+}
+.post-main .container .post-item .post-body .post-view-full {
+  color: #f44336;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.post-main .container .post-item .post-comment-preview {
+  padding: 0.5rem;
+  border-left: 2px solid #2196f3;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.post-main .container .post-item .post-comment-preview .comment-author {
+  color: #2196f3;
+  font-weight: bold;
+  display: block;
+}
+.post-main .container .post-item .post-comment-preview .time {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.post-main .container .post-item .post-comment-preview .time .comment-timestamp {
+  font-size: 0.75rem;
+  color: #90caf9;
+  margin-top: 0.25rem;
+  align-self: end;
+}
+.post-main .container .post-item .post-footer {
+  text-align: right;
+}
+.post-main .container .post-item .post-footer .view-all-comments {
+  color: #f44336;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+.post-main .container #createCommentForm {
+  display: flex;
+}
+.post-main .container #createCommentForm textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #666;
+  background-color: #222;
+  color: white;
+  resize: none;
+  margin-right: 1rem;
+}
+.post-main .container #createCommentForm textarea:focus {
+  border: 1px solid #b7e3ff;
+}
+.post-main .container #createCommentForm button {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/*# sourceMappingURL=post-page__styles.css.map */

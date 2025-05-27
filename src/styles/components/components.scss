@@ -23,7 +23,7 @@ $red: #e51313;
   z-index: 1000;
   display: none;
 
-  &.active {
+  &:active {
     display: flex;
     align-items: center;
     justify-content: center;
