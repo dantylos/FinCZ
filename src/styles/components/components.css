@@ -183,6 +183,10 @@ body.modal-open {
 .modal form #security-question-select {
   padding: 0.6rem;
   border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.modal form #security-question-select:focus {
+  border: 2px solid #101010;
 }
 .modal form button[type=submit] {
   background: #e8b304;

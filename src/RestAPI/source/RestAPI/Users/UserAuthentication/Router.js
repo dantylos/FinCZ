@@ -1,7 +1,9 @@
 const express = require('express');
 const userService = require('./Service');
 const { asyncHandler } = require('../../utils/routerUtils');
-const { verifyToken } = require('../../utils/jwtUtils');
+
+// Сань, это я добавил Верификацию токена 
+const { generateToken, verifyToken } = require('../../utils/jwtUtils');
 
 const router = express.Router();
 
@@ -24,9 +26,37 @@ const authenticateUser = async (req, res, next) => {
 // Login endpoint
 router.post('/login', asyncHandler(async (req, res) => {
     const { username, password } = req.body;
-    const result = await userService.loginUser({ username, password });
-    res.json(result);
+
+    try {
+        // Получаем данные пользователя из сервиса
+        const user = await userService.loginUser({ username, password });
+
+        // Генерируем JWT токен с данными пользователя
+        const token = generateToken(user);
+
+        // Возвращаем токен и безопасные данные пользователя
+        res.json({
+            token,
+            user: {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                legal_names: user.legal_names,
+                role: user.role || 'user'
+            }
+        });
+    } catch (error) {
+        res.status(401).json({ error: error.message });
+    }
 }));
+
+
+
+// Сань, твой логин импорт намного лучше чем я раньше делал, харош
+
+// Но я верну сюда профайл апдейт свой, ок?
+
+// Вообще, если сломает код, удалить начиная с этого комента
 
 // Update username endpoint
 router.put('/profile/username', authenticateUser, asyncHandler(async (req, res) => {
@@ -63,5 +93,8 @@ router.put('/profile/password', authenticateUser, asyncHandler(async (req, res) 
     const result = await userService.updatePassword(req.user.userId, currentPassword, newPassword);
     res.json(result);
 }));
+
+
+// и заканчивая тут
 
 module.exports = router;

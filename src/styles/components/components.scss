@@ -225,6 +225,11 @@ body.modal-open {
     #security-question-select{
       padding: 0.6rem;
       border-radius: 6px;
+      border: 1px solid #ccc;
+
+      &:focus{
+        border: 2px solid $black;
+      }
     }
 
     button[type="submit"] {
