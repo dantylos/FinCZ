@@ -1,5 +1,5 @@
 
-import { AuthUtils } from './authUtils.js'; // убедись, что путь правильный
+import { AuthUtils } from './authUtils.js';
 
 // Функция для создания треда
 async function createThread(threadData) {

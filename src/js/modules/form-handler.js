@@ -8,6 +8,11 @@ export function initFormHandler() {
         registrationForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
+            if (!AuthUtils.canLogin()) {
+                alert('Please accept our privacy policy and cookie agreement first.');
+                return;
+            }
+
             const emailInput = this.email;
             const passwordInput = this.password;
             const nameInput = this.name; // Исправлено: было legal_names, стало name
@@ -109,6 +114,12 @@ export function initFormHandler() {
         signInForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
+
+            if (!AuthUtils.canLogin()) {
+                alert('Please accept our privacy policy and cookie agreement to log in.');
+                return;
+            }
+
             const usernameInput = this['login-user'];
             const passwordInput = this['login-password'];
 
@@ -165,7 +176,6 @@ export function initFormHandler() {
                     document.querySelector('main').style.filter = '';
 
                     // TODO: Update UI to show logged in state
-
                 }
             } catch (error) {
                 alert('Request failed. Please try again.');
