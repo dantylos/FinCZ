@@ -1,7 +1,7 @@
 import { qs } from '../utils/dom-utils.js';
 
 // API URL для получения тредов
-const API_BASE_URL = 'http://localhost:3000/api/threads';
+const API_BASE_URL = 'https://financecz.onrender.com/api/threads';
 
 // Функция для загрузки тредов с сервера
 const fetchThreads = async () => {

@@ -9,7 +9,7 @@ async function createThread(threadData) {
     }
 
     try {
-        const response = await fetch('http://localhost:3000/api/threads/create', {
+        const response = await fetch('https://financecz.onrender.com/api/threads/create', {
             method: 'POST',
             headers: {
                 ...AuthUtils.getAuthHeaders(),
