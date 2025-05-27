@@ -29,13 +29,41 @@
     </div>
 </header>
 
-<main class="thread-main">
+<main class="post-main">
 
-    <section class="post">
+    <section>
         <div class="container">
 
+            <div class="post-item">
+                <div class="post-header">
+                    <span class="post-author">Creator username</span>
+                    <time datetime="2024-05-27T13:45" class="post-timestamp">Was made</time>
+                </div>
 
+                <div class="post-body">
+                    <p class="post-content-preview">Post content</p>
+                </div>
 
+                <form id="createCommentForm" name="createComment" autocomplete="off">
+
+                    <label for="commentContent"></label>
+                    <textarea id="commentContent"
+                              name="commentContent"
+                              placeholder="Write your comment here..."
+                              maxlength="400"
+                              required
+                              aria-label="Comment content"></textarea>
+
+                    <button id="postCommentBtn" type="submit" aria-label="Post comment">Comment</button>
+
+                </form>
+
+                <div class="post-comment-preview">
+                    <span class="comment-author">Comment creator username</span>
+                    <p class="comment-preview-text">content</p>
+                    <div class="time"><time datetime="2024-05-27T14:00" class="comment-timestamp">was made</time></div>
+                </div>
+            </div>
         </div>
     </section>
 </main>

@@ -9,7 +9,7 @@
   z-index: 1000;
   display: none;
 }
-.policy-modal.active {
+.policy-modal:active {
   display: flex;
   align-items: center;
   justify-content: center;
