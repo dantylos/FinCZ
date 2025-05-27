@@ -107,7 +107,7 @@ const refreshThreads = () => {
 export const initThreadLoader = () => {
     // Загружаем треды при инициализации
     renderThreads();
-    
+
     return {
         refreshThreads,
         renderThreads

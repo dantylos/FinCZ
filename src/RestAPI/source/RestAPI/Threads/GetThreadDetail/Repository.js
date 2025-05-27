@@ -13,7 +13,7 @@ const getThreadById = async (threadId) => {
             u.username as author_username,
             u.id as author_id
         FROM threads t
-        LEFT JOIN users u ON t.author_id = u.id
+                 LEFT JOIN users u ON t.author_id = u.id
         WHERE t.id = $1
     `;
 
@@ -32,18 +32,17 @@ const getThreadPosts = async (threadId) => {
             u.id as author_id,
             lc.content as last_comment_content,
             lc.created_at as last_comment_date,
-            lc_user.username as last_comment_author
+            lc.username as last_comment_author
         FROM posts p
-        LEFT JOIN users u ON p.author_id = u.id
-        LEFT JOIN LATERAL (
+                 LEFT JOIN users u ON p.author_id = u.id
+                 LEFT JOIN LATERAL (
             SELECT c.content, c.created_at, cu.username
             FROM comments c
-            LEFT JOIN users cu ON c.author_id = cu.id
+                     LEFT JOIN users cu ON c.author_id = cu.id
             WHERE c.post_id = p.id
             ORDER BY c.created_at DESC
             LIMIT 1
-        ) lc(content, created_at, username) ON true
-        LEFT JOIN users lc_user ON lc_user.username = lc.username
+            ) lc ON true
         WHERE p.thread_id = $1
         ORDER BY p.created_at ASC
     `;
