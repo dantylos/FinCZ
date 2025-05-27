@@ -1,0 +1,318 @@
+header {
+  opacity: 80%;
+  background-color: #101010;
+  padding: 0.5rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1001;
+}
+header .container {
+  max-width: inherit;
+  position: relative;
+}
+header .container nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container nav .left-menu-list {
+  display: flex;
+  gap: 6rem;
+}
+header .container nav .left-menu-list li a {
+  color: #fff;
+  text-transform: lowercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.15rem;
+  transition: 0.1s;
+}
+header .container nav .left-menu-list li a:hover {
+  transform: scale(1.05);
+  color: #c0c0c0;
+}
+header .container nav .right-menu-list {
+  display: flex;
+  gap: 1.5rem;
+}
+header .container nav .right-menu-list li .sign-in-btn {
+  background-color: #e8b304;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem 0.25rem;
+  word-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+header .container .logo {
+  position: absolute;
+  left: calc(50% - 111px);
+  top: -1px;
+}
+header .container .logo .logo-img {
+  max-width: 296px;
+}
+header .container .logo .logo-img img {
+  display: block;
+  width: 100%;
+}
+
+main {
+  background-color: #0B0824;
+  padding-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+main #main-wrapper {
+  flex: 1 1 0;
+  max-width: 860px;
+}
+main #main-wrapper .container h2 {
+  color: #00e676;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+}
+main #main-wrapper .container .search-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: auto;
+}
+main #main-wrapper .container .avatar-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+main #main-wrapper .container .avatar-button:hover, main #main-wrapper .container .avatar-button:focus {
+  opacity: 0.8;
+}
+main #main-wrapper .container .avatar-button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+main #main-wrapper .container .avatar-image {
+  width: 1.8rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+main #main-wrapper .container .search-form {
+  flex-grow: 1;
+}
+main #main-wrapper .container .search-input {
+  width: 100%;
+  background-color: #454545;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+main #main-wrapper .container .search-input::placeholder {
+  color: #c0c0c0;
+}
+main #main-wrapper .container .search-input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+main #main-wrapper .container .thread-creator {
+  width: 100%;
+  margin: 3rem auto;
+  box-sizing: border-box;
+  color: #e0e0e0;
+  border-top: 1px solid #c0c0c0;
+  padding-top: 2rem;
+}
+main #main-wrapper .container .thread-creator #createThreadForm {
+  display: flex;
+  flex-direction: column;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label {
+  display: block;
+  width: 100%;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label input[type=text],
+main #main-wrapper .container .thread-creator #createThreadForm label textarea,
+main #main-wrapper .container .thread-creator #createThreadForm label select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #8e8e8e;
+  border-radius: 12px;
+  background-color: #454545;
+  color: #e0e0e0;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label input[type=text]::placeholder,
+main #main-wrapper .container .thread-creator #createThreadForm label textarea::placeholder,
+main #main-wrapper .container .thread-creator #createThreadForm label select::placeholder {
+  color: #8a8a8a;
+  font-style: italic;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label input[type=text]:focus,
+main #main-wrapper .container .thread-creator #createThreadForm label textarea:focus,
+main #main-wrapper .container .thread-creator #createThreadForm label select:focus {
+  outline: none;
+  border-color: #5bbaff;
+  box-shadow: 0 0 6px rgba(91, 186, 255, 0.6666666667);
+  background-color: #262a2f;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label textarea {
+  min-height: 120px;
+  resize: none;
+}
+main #main-wrapper .container .thread-creator #createThreadForm label select {
+  cursor: pointer;
+  appearance: none;
+  background-size: 16px 16px;
+}
+main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn {
+  align-self: end;
+  background-color: #e8b304;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.15s;
+  width: 5rem;
+}
+main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn:hover {
+  background-color: #fff41f;
+  color: #101010;
+}
+main #main-wrapper .container .thread-creator .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+main #main-wrapper .container #threadList {
+  list-style: none;
+  border-top: 1px solid #c0c0c0;
+  margin-top: 4rem;
+}
+main #main-wrapper .container #threadList .thread-item {
+  margin-top: 2rem;
+  background: #013E99;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 2px solid #454545;
+  box-sizing: border-box;
+  position: relative;
+}
+main #main-wrapper .container #threadList .thread-item a {
+  inset: 0;
+  content: "";
+  position: absolute;
+}
+main #main-wrapper .container #threadList .thread-item__info {
+  color: #54aafc;
+  text-align: left;
+  position: relative;
+}
+main #main-wrapper .container #threadList .thread-item__info .thread-item__name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: block;
+}
+main #main-wrapper .container #threadList .thread-item__info .thread-item__creator {
+  font-size: 0.8rem;
+  display: block;
+}
+main #main-wrapper .container #threadList .thread-item__info .thread-item__created {
+  margin-top: 10px;
+  font-size: 1rem;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+main #main-wrapper .container #threadList .thread-item__info .thread-item__created-label {
+  font-style: italic;
+}
+main #main-wrapper .container #threadList .thread-item__info .thread-item__created-date {
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+}
+main #main-wrapper .container #threadList .thread-item__lastpost {
+  text-align: right;
+  color: #ff8a9e;
+  position: relative;
+}
+main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-title {
+  font-size: 1.18rem;
+  font-weight: 600;
+  display: block;
+}
+main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-date {
+  font-size: 1.1rem;
+  font-style: italic;
+  display: block;
+  margin-top: 12px;
+}
+main aside {
+  flex: 0 0 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px 20px;
+  min-width: 320px;
+  max-width: 320px;
+}
+main aside .box {
+  background-color: black;
+}
+main aside .box .tradingview-widget-container {
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+footer {
+  background-color: #101010;
+  padding: 8px 0;
+}
+footer .container {
+  display: flex;
+  justify-content: center;
+}
+footer .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
+}
+footer .container ul li a {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+footer .container ul li a:hover {
+  transform: scale(1.05);
+  color: #c0c0c0;
+}
+
+/*# sourceMappingURL=main-page.css.map */
