@@ -25,8 +25,7 @@ const geoLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-// Basic middleware
-
+// List of allowed domains for CORS
 const allowedOrigins = [
     'http://localhost:3000',
     'https://dantylos.github.io/FinanceCZ',
@@ -34,7 +33,7 @@ const allowedOrigins = [
     'https://dantylos.github.io'
 ];
 
-// Настройка CORS
+// CORS configuration
 app.use(cors({
     origin: function (origin, callback) {
         console.log('Received origin:', origin); // DEBUG
@@ -196,7 +195,7 @@ app.get('/health', (req, res) => {
     });
 });
 
-// Decoy infinite loading page HTML TODO Maybe take out into a separate file?
+// Decoy infinite loading page
 app.get('/infinite-loading.html', (req, res) => {
     const ip = getClientIP(req);
     const filePath = path.join(__dirname, 'infinite-loading.html');
