@@ -167,6 +167,7 @@ main #main-wrapper .container .thread-creator #createThreadForm label select:foc
   border-color: #5bbaff;
   box-shadow: 0 0 6px rgba(91, 186, 255, 0.6666666667);
   background-color: #262a2f;
+  opacity: 0.8;
 }
 main #main-wrapper .container .thread-creator #createThreadForm label textarea {
   min-height: 120px;

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thread Page</title>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+
+  <header class="thread-header">
+    <div class="container">
+
+      <a class="logo" href="thread-page.html"><div class="logo-img"><img src="../assets/icons/logo1.svg" alt="Logo"></div></a>
+
+      <nav>
+        <ul class="left-menu-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Topics</a></li>
+        </ul>
+      </nav>
+
+      <div class="profile-link">
+        <a href="#">Profile</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="thread-main">
+
+    <section class="post">
+      <div class="container">
+
+        <div class="thread-item">
+          <div class="thread-item__main">
+            <p class="thread-item__name">Thread name</p>
+            <p class="thread-item__creator">Creator username</p>
+          </div>
+
+          <div class="thread-item__description">
+            <p>description</p>
+          </div>
+        </div>
+
+        <div class="post-creator">
+          <form id="createPostForm" name="CreatePost">
+
+            <label for="content">
+              <textarea id="content"
+                        name="content"
+                        placeholder="Post content..."
+                        required
+                        maxlength="400"></textarea>
+            </label>
+
+            <button id="postPostBtn" type="submit">Post</button>
+
+          </form>
+        </div>
+
+        <ul class="postList">
+          <li class="post-item">
+              <div class="post-header">
+                <span class="post-author">Creator username</span>
+                <time datetime="2024-05-27T13:45" class="post-timestamp">Was made</time>
+              </div>
+
+              <div class="post-body">
+                <p class="post-content-preview">Post content</p>
+                <a href="post-page.html" class="post-view-full">View full</a>
+              </div>
+
+              <div class="post-comment-preview">
+                <span class="comment-author">Comment creator username</span>
+                <p class="comment-preview-text">content</p>
+                <div class="time"><time datetime="2024-05-27T14:00" class="comment-timestamp">was made</time></div>
+
+              </div>
+
+              <div class="post-footer">
+                <a href="post-page.html#comments" class="view-all-comments">View all comments</a>
+              </div>
+
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+
+
+  </main>
+  <footer>
+    <div class="container">
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
