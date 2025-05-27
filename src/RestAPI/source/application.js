@@ -30,7 +30,8 @@ const geoLimiter = rateLimit({
 const allowedOrigins = [
     'http://localhost:3000',
     'https://dantylos.github.io/FinanceCZ',
-    'https://dantylos.github.io/FinanceCZ/'
+    'https://dantylos.github.io/FinanceCZ/',
+    'https://dantylos.github.io'
 ];
 
 // Настройка CORS
