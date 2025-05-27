@@ -76,9 +76,9 @@
 </footer>
 
 <script type="module">
-  import { AuthUtils } from '../js/authUtils.js';
-  import { initPostLoader } from '../js/post-loader.js';
-  import { initPostCreator } from '../js/post-creator.js';
+  import { AuthUtils } from '../js/modules/authUtils.js';
+  import { initPostLoader } from '../js/modules/post-loader.js';
+  import { initPostCreator } from '../js/modules/post-creator.js';
 
   const getThreadIdFromUrl = () => {
     const urlParams = new URLSearchParams(window.location.search);
