@@ -30,6 +30,22 @@ export const AuthUtils = {
         }
     },
 
+    // Checker for cookie agreement
+    hasCookieAgreement() {
+        const agreement = localStorage.getItem('cookieAgreement');
+        return agreement === 'accepted';
+    },
+
+    // Saves cookie agreement status in localStorage
+    setCookieAgreement(status) {
+        localStorage.setItem('cookieAgreement', status);
+    },
+
+    // Login access checker
+    canLogin() {
+        return this.hasCookieAgreement();
+    },
+
     // Получить данные пользователя из токена
     getCurrentUser() {
         const token = this.getToken();
