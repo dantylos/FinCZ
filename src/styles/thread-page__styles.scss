@@ -1,3 +1,4 @@
+// Thread-header
 .thread-header{
  padding: 1rem 1.5rem;
 
@@ -21,7 +22,7 @@
     .container{
       display: flex;
       flex-direction: column;
-      max-width: 680px;
+      max-width: 740px;
       gap: 4rem;
 
       .thread-item{
@@ -37,7 +38,6 @@
         gap: 2rem;
         border: 2px solid #323232;
         box-sizing: border-box;
-        max-width: 680px;
 
         .thread-item__name {
           font-size: 1.5rem;
@@ -61,6 +61,35 @@
         form{
           display: flex;
           flex-direction: column;
+        }
+
+        input{
+          width: 100%;
+          padding: 12px 16px;
+          border: 1px solid #8e8e8e;
+          background-color: #444545;
+          color: #e1e0e0;
+          font-size: 1rem;
+          font-family: 'Lato', sans-serif;
+          box-sizing: border-box;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+          margin-bottom: 0.5rem;
+          border-radius: 8px;
+
+          &::placeholder {
+            color: #8a8a8a;
+            font-style: italic;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: #5bbaff;
+            box-shadow: 0 0 6px #5bbaffaa;
+            background-color: #262a2f;
+            opacity: 0.8;
+          }
         }
 
         textarea {
@@ -203,5 +232,4 @@
       }
     }
   }
-
 }

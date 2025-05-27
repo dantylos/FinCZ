@@ -17,7 +17,7 @@
 .thread-main .post .container {
   display: flex;
   flex-direction: column;
-  max-width: 680px;
+  max-width: 740px;
   gap: 4rem;
 }
 .thread-main .post .container .thread-item {
@@ -33,7 +33,6 @@
   gap: 2rem;
   border: 2px solid #323232;
   box-sizing: border-box;
-  max-width: 680px;
 }
 .thread-main .post .container .thread-item .thread-item__name {
   font-size: 1.5rem;
@@ -54,6 +53,32 @@
 .thread-main .post .container .post-creator form {
   display: flex;
   flex-direction: column;
+}
+.thread-main .post .container .post-creator input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #8e8e8e;
+  background-color: #444545;
+  color: #e1e0e0;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+}
+.thread-main .post .container .post-creator input::placeholder {
+  color: #8a8a8a;
+  font-style: italic;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+.thread-main .post .container .post-creator input:focus {
+  outline: none;
+  border-color: #5bbaff;
+  box-shadow: 0 0 6px rgba(91, 186, 255, 0.6666666667);
+  background-color: #262a2f;
+  opacity: 0.8;
 }
 .thread-main .post .container .post-creator textarea {
   min-height: 120px;
