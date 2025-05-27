@@ -25,17 +25,19 @@ const geoLimiter = rateLimit({
     legacyHeaders: false,
 });
 
-// Basic middleware
-const githubPagesFrontendUrl = 'https://dantylos.github.io/FinanceCZ/';
-
+// List of allowed domains for CORS
 const allowedOrigins = [
     'http://localhost:3000',
-    githubPagesFrontendUrl
+    'https://dantylos.github.io/FinanceCZ',
+    'https://dantylos.github.io/FinanceCZ/',
+    'https://dantylos.github.io'
 ];
 
-// Настройка CORS
+// CORS configuration
 app.use(cors({
     origin: function (origin, callback) {
+        console.log('Received origin:', origin); // DEBUG
+        console.log('Allowed origins:', allowedOrigins); // DEBUG
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true);
         } else {
@@ -193,7 +195,7 @@ app.get('/health', (req, res) => {
     });
 });
 
-// Decoy infinite loading page HTML TODO Maybe take out into a separate file?
+// Decoy infinite loading page
 app.get('/infinite-loading.html', (req, res) => {
     const ip = getClientIP(req);
     const filePath = path.join(__dirname, 'infinite-loading.html');
