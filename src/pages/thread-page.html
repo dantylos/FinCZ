@@ -44,7 +44,7 @@
       </div>
 
       <!-- Post Creator -->
-      <div class="post-creator">
+      <div class="post-creator" id="post-creator-section">
         <form id="createPostForm" name="CreatePost">
           <label for="content">
               <textarea id="content"
@@ -77,7 +77,8 @@
 
 <script type="module">
   import { AuthUtils } from '../js/authUtils.js';
-
+  import { initPostLoader } from '../js/post-loader.js';
+  import { initPostCreator } from '../js/post-creator.js';
 
   const getThreadIdFromUrl = () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -99,16 +100,16 @@
     return text ? text.replace(/[&<>"']/g, (m) => map[m]) : '';
   };
 
-
-  const loadThreadData = async (threadId) => {
+  const loadThreadInfo = async (threadId) => {
     try {
       const response = await fetch(`${API_BASE_URL}/threads/${threadId}`);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      return await response.json();
+      const data = await response.json();
+      return data.thread;
     } catch (error) {
-      console.error('Error loading thread data:', error);
+      console.error('Error loading thread info:', error);
       return null;
     }
   };
@@ -117,136 +118,44 @@
   const renderThreadInfo = (thread) => {
     document.getElementById('page-title').textContent = thread.title;
     document.getElementById('thread-title').textContent = thread.title;
-    document.getElementById('thread-creator').textContent = thread.author.username;
+    document.getElementById('thread-creator').textContent = `by ${thread.author.username} • ${thread.formatted_date}`;
     document.getElementById('thread-description').textContent = thread.body;
   };
-
-
-  const createPostElement = (post) => {
-    const li = document.createElement('li');
-    li.className = 'post-item';
-
-    let commentPreview = '';
-    if (post.last_comment && post.last_comment.content) {
-      commentPreview = `
-          <div class="post-comment-preview">
-            <span class="comment-author">${escapeHtml(post.last_comment.author)}</span>
-            <p class="comment-preview-text">${escapeHtml(post.last_comment.content.substring(0, 100))}${post.last_comment.content.length > 100 ? '...' : ''}</p>
-            <div class="time"><time class="comment-timestamp">${post.last_comment.formatted_date}</time></div>
-          </div>
-        `;
-    }
-
-    li.innerHTML = `
-        <div class="post-header">
-          <span class="post-author">${escapeHtml(post.author.username)}</span>
-          <time class="post-timestamp">${post.formatted_date}</time>
-        </div>
-        <div class="post-body">
-          <p class="post-content-preview">${escapeHtml(post.content)}</p>
-          <a href="post-page.html?id=${post.id}" class="post-view-full">View full</a>
-        </div>
-        ${commentPreview}
-        <div class="post-footer">
-          <a href="post-page.html?id=${post.id}#comments" class="view-all-comments">View all comments</a>
-        </div>
-      `;
-
-    return li;
-  };
-
-  // Post rendering
-  const renderPosts = (posts) => {
-    const postList = document.getElementById('postList');
-    postList.innerHTML = '';
-
-    if (posts.length === 0) {
-      postList.innerHTML = '<li class="no-posts">No posts yet. Be the first to post!</li>';
-      return;
-    }
-
-    posts.forEach(post => {
-      const postElement = createPostElement(post);
-      postList.appendChild(postElement);
-    });
-  };
-
-
-  const createPost = async (content, threadId) => {
-    if (!AuthUtils.isAuthenticated()) {
-      alert('Please log in to create a post');
-      return false;
-    }
-
-    try {
-      const response = await fetch(`${API_BASE_URL}/posts/create`, {
-        method: 'POST',
-        headers: {
-          ...AuthUtils.getAuthHeaders(),
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          thread_id: threadId,
-          content: content
-        })
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        alert(result.error || 'Failed to create post');
-        return false;
-      } else {
-        return true;
-      }
-    } catch (error) {
-      console.error('Error creating post:', error);
-      alert('Request failed. Please try again.');
-      return false;
-    }
-  };
-
-
-  const initPostForm = (threadId) => {
-    const postForm = document.getElementById('createPostForm');
-    if (postForm) {
-      postForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(e.target);
-        const content = formData.get('content');
-
-        const success = await createPost(content, threadId);
-        if (success) {
-          postForm.reset();
-          initializePage();
-        }
-      });
-    }
-  };
-
 
   const initializePage = async () => {
     const threadId = getThreadIdFromUrl();
 
     if (!threadId) {
       document.getElementById('thread-info').innerHTML = '<p>Thread ID not found</p>';
+      document.getElementById('postList').innerHTML = '<li class="error-item">Thread ID not found in URL</li>';
       return;
     }
 
-    const data = await loadThreadData(threadId);
+    const threadData = await loadThreadInfo(threadId);
 
-    if (!data) {
+    if (!threadData) {
       document.getElementById('thread-info').innerHTML = '<p>Failed to load thread data</p>';
-      document.getElementById('postList').innerHTML = '<li class="error-item">Failed to load posts</li>';
+      document.getElementById('postList').innerHTML = '<li class="error-item">Failed to load thread data</li>';
       return;
     }
 
-    renderThreadInfo(data.thread);
-    renderPosts(data.posts);
-    initPostForm(threadId);
-  };
 
+    renderThreadInfo(threadData);
+
+    // Инициализируем загрузчик постов
+    const postLoader = initPostLoader(threadId, '#postList');
+
+    // Инициализируем создатель постов с callback для обновления списка
+    const onPostCreated = (newPost) => {
+      console.log('New post created:', newPost);
+      // Обновляем список постов после создания нового поста
+      if (postLoader) {
+        postLoader.refreshPosts();
+      }
+    };
+
+    initPostCreator(threadId, onPostCreated);
+  };
 
   document.addEventListener('DOMContentLoaded', initializePage);
 </script>

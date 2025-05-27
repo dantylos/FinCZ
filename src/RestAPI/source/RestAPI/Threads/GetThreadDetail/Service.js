@@ -35,12 +35,12 @@ const getThreadDetailService = async (threadId) => {
         created_at: post.created_at,
         updated_at: post.updated_at,
         formatted_date: formatDate(post.created_at),
-        last_comment: {
+        last_comment: post.last_comment_content ? {
             content: post.last_comment_content,
             author: post.last_comment_author,
             date: post.last_comment_date,
-            formatted_date: post.last_comment_date ? formatDate(post.last_comment_date) : null
-        }
+            formatted_date: formatDate(post.last_comment_date)
+        } : null
     }));
 
     return {
