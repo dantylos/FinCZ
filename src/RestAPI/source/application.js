@@ -28,6 +28,7 @@ const geoLimiter = rateLimit({
 // List of allowed domains for CORS
 const allowedOrigins = [
     'http://localhost:3000',
+    'http://localhost:63342',
     'https://dantylos.github.io/FinanceCZ',
     'https://dantylos.github.io/FinanceCZ/',
     'https://dantylos.github.io'
