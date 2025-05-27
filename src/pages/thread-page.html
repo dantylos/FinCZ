@@ -1,115 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Thread Page</title>
+  <title id="page-title">Thread Page</title>
   <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
 
-  <header class="thread-header">
+<header class="thread-header">
+  <div class="container">
+    <a class="logo" href="../index.html"><div class="logo-img"><img src="../assets/icons/logo1.svg" alt="Logo"></div></a>
+
+    <nav>
+      <ul class="left-menu-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Topics</a></li>
+      </ul>
+    </nav>
+
+    <div class="profile-link">
+      <a href="#">Profile</a>
+    </div>
+  </div>
+</header>
+
+<main class="thread-main">
+  <section class="post">
     <div class="container">
 
-      <a class="logo" href="thread-page.html"><div class="logo-img"><img src="../assets/icons/logo1.svg" alt="Logo"></div></a>
-
-      <nav>
-        <ul class="left-menu-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Account</a></li>
-          <li><a href="#">Topics</a></li>
-        </ul>
-      </nav>
-
-      <div class="profile-link">
-        <a href="#">Profile</a>
+      <!-- Thread Information -->
+      <div class="thread-item" id="thread-info">
+        <div class="thread-item__main">
+          <p class="thread-item__name" id="thread-title">Loading...</p>
+          <p class="thread-item__creator" id="thread-creator">Loading...</p>
+        </div>
+        <div class="thread-item__description">
+          <p id="thread-description">Loading...</p>
+        </div>
       </div>
 
-    </div>
-  </header>
-
-  <main class="thread-main">
-
-    <section class="post">
-      <div class="container">
-
-        <div class="thread-item">
-          <div class="thread-item__main">
-            <p class="thread-item__name">Thread name</p>
-            <p class="thread-item__creator">Creator username</p>
-          </div>
-
-          <div class="thread-item__description">
-            <p>description</p>
-          </div>
-        </div>
-
-        <div class="post-creator">
-          <form id="createPostForm" name="CreatePost">
-
-            <label for="postName">
-              <input type="text"
-                     id="postName"
-                     name="postName"
-                     placeholder="Post name..."
-                     required
-                     maxlength="100" />
-            </label>
-
-            <label for="content">
+      <!-- Post Creator -->
+      <div class="post-creator">
+        <form id="createPostForm" name="CreatePost">
+          <label for="content">
               <textarea id="content"
                         name="content"
                         placeholder="Post content..."
                         required
                         maxlength="400"></textarea>
-            </label>
-
-            <button id="postPostBtn" type="submit">Post</button>
-
-          </form>
-        </div>
-
-        <ul class="postList">
-          <li class="post-item">
-              <div class="post-header">
-                <span class="post-author">Creator username</span>
-                <time datetime="2024-05-27T13:45" class="post-timestamp">Was made</time>
-              </div>
-
-              <div class="post-body">
-                <p class="post-content-preview">Post content</p>
-                <a href="post-page.html" class="post-view-full">View full</a>
-              </div>
-
-              <div class="post-comment-preview">
-                <span class="comment-author">Comment creator username</span>
-                <p class="comment-preview-text">content</p>
-                <div class="time"><time datetime="2024-05-27T14:00" class="comment-timestamp">was made</time></div>
-
-              </div>
-
-              <div class="post-footer">
-                <a href="post-page.html#comments" class="view-all-comments">View all comments</a>
-              </div>
-
-          </li>
-        </ul>
-
+          </label>
+          <button id="postPostBtn" type="submit">Post</button>
+        </form>
       </div>
-    </section>
 
-
-
-  </main>
-  <footer>
-    <div class="container">
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">contact</a></li>
+      <!-- Posts List -->
+      <ul class="postList" id="postList">
+        <li class="loading-item">Loading posts...</li>
       </ul>
+
     </div>
-  </footer>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <ul>
+      <li><a href="../index.html">home</a></li>
+      <li><a href="#">contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script type="module">
+  import { AuthUtils } from '../js/authUtils.js';
+
+
+  const getThreadIdFromUrl = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+  };
+
+  // API URL
+  const API_BASE_URL = 'https://financecz.onrender.com/api';
+
+  // HTML shielding
+  const escapeHtml = (text) => {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return text ? text.replace(/[&<>"']/g, (m) => map[m]) : '';
+  };
+
+
+  const loadThreadData = async (threadId) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/threads/${threadId}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('Error loading thread data:', error);
+      return null;
+    }
+  };
+
+  // Render thread info
+  const renderThreadInfo = (thread) => {
+    document.getElementById('page-title').textContent = thread.title;
+    document.getElementById('thread-title').textContent = thread.title;
+    document.getElementById('thread-creator').textContent = thread.author.username;
+    document.getElementById('thread-description').textContent = thread.body;
+  };
+
+
+  const createPostElement = (post) => {
+    const li = document.createElement('li');
+    li.className = 'post-item';
+
+    let commentPreview = '';
+    if (post.last_comment && post.last_comment.content) {
+      commentPreview = `
+          <div class="post-comment-preview">
+            <span class="comment-author">${escapeHtml(post.last_comment.author)}</span>
+            <p class="comment-preview-text">${escapeHtml(post.last_comment.content.substring(0, 100))}${post.last_comment.content.length > 100 ? '...' : ''}</p>
+            <div class="time"><time class="comment-timestamp">${post.last_comment.formatted_date}</time></div>
+          </div>
+        `;
+    }
+
+    li.innerHTML = `
+        <div class="post-header">
+          <span class="post-author">${escapeHtml(post.author.username)}</span>
+          <time class="post-timestamp">${post.formatted_date}</time>
+        </div>
+        <div class="post-body">
+          <p class="post-content-preview">${escapeHtml(post.content)}</p>
+          <a href="post-page.html?id=${post.id}" class="post-view-full">View full</a>
+        </div>
+        ${commentPreview}
+        <div class="post-footer">
+          <a href="post-page.html?id=${post.id}#comments" class="view-all-comments">View all comments</a>
+        </div>
+      `;
+
+    return li;
+  };
+
+  // Post rendering
+  const renderPosts = (posts) => {
+    const postList = document.getElementById('postList');
+    postList.innerHTML = '';
+
+    if (posts.length === 0) {
+      postList.innerHTML = '<li class="no-posts">No posts yet. Be the first to post!</li>';
+      return;
+    }
+
+    posts.forEach(post => {
+      const postElement = createPostElement(post);
+      postList.appendChild(postElement);
+    });
+  };
+
+
+  const createPost = async (content, threadId) => {
+    if (!AuthUtils.isAuthenticated()) {
+      alert('Please log in to create a post');
+      return false;
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/posts/create`, {
+        method: 'POST',
+        headers: {
+          ...AuthUtils.getAuthHeaders(),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          thread_id: threadId,
+          content: content
+        })
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        alert(result.error || 'Failed to create post');
+        return false;
+      } else {
+        return true;
+      }
+    } catch (error) {
+      console.error('Error creating post:', error);
+      alert('Request failed. Please try again.');
+      return false;
+    }
+  };
+
+
+  const initPostForm = (threadId) => {
+    const postForm = document.getElementById('createPostForm');
+    if (postForm) {
+      postForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const content = formData.get('content');
+
+        const success = await createPost(content, threadId);
+        if (success) {
+          postForm.reset();
+          initializePage();
+        }
+      });
+    }
+  };
+
+
+  const initializePage = async () => {
+    const threadId = getThreadIdFromUrl();
+
+    if (!threadId) {
+      document.getElementById('thread-info').innerHTML = '<p>Thread ID not found</p>';
+      return;
+    }
+
+    const data = await loadThreadData(threadId);
+
+    if (!data) {
+      document.getElementById('thread-info').innerHTML = '<p>Failed to load thread data</p>';
+      document.getElementById('postList').innerHTML = '<li class="error-item">Failed to load posts</li>';
+      return;
+    }
+
+    renderThreadInfo(data.thread);
+    renderPosts(data.posts);
+    initPostForm(threadId);
+  };
+
+
+  document.addEventListener('DOMContentLoaded', initializePage);
+</script>
+
 </body>
 </html>
