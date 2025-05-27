@@ -1,0 +1,207 @@
+.thread-header{
+ padding: 1rem 1.5rem;
+
+  .container{
+    display: flex;
+
+    .logo{
+      top: -3px;
+    }
+  }
+}
+
+
+// Thread-main
+.thread-main{
+  width: 100%;
+
+  .post{
+    width: 100%;
+
+    .container{
+      display: flex;
+      flex-direction: column;
+      max-width: 680px;
+      gap: 4rem;
+
+      .thread-item{
+        width: 100%;
+        background: #013E99;
+        color: #fff;
+        padding: 1rem;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;
+        border: 2px solid #323232;
+        box-sizing: border-box;
+        max-width: 680px;
+
+        .thread-item__name {
+          font-size: 1.5rem;
+          font-weight: 600;
+          display: block;
+        }
+
+        .thread-item__creator {
+          font-size: 0.8rem;
+          display: block;
+        }
+      }
+
+      .post-creator{
+        width: 100%;
+        box-sizing: border-box;
+        color: #e0e0e0;
+        border-top: 1px solid #8e8e8e;
+        padding-top: 2rem;
+
+        form{
+          display: flex;
+          flex-direction: column;
+        }
+
+        textarea {
+          min-height: 120px;
+          resize: none;
+          width: 100%;
+          padding: 12px 16px;
+          border: 1px solid #8e8e8e;
+          background-color: #444545;
+          color: #e1e0e0;
+          font-size: 1rem;
+          font-family: 'Lato', sans-serif;
+          box-sizing: border-box;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+          margin-bottom: 0.5rem;
+          border-radius: 8px;
+
+          &::placeholder {
+            color: #8a8a8a;
+            font-style: italic;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+          }
+
+          &:focus {
+            outline: none;
+            border-color: #5bbaff;
+            box-shadow: 0 0 6px #5bbaffaa;
+            background-color: #262a2f;
+            opacity: 0.8;
+          }
+        }
+
+        button{
+          align-self: end;
+          background-color: #F7C005;
+          color: #000;
+          border: none;
+          border-radius: 8px;
+          padding: 12px 20px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.15s;
+          width: 5rem;
+
+          &:hover {
+            background-color: #fff41f;
+            color: #000;
+          }
+        }
+      }
+
+      .postList {
+        list-style: none;
+        border-top: 1px solid #8e8e8e;
+        padding-top: 2rem;
+
+        .post-item {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-bottom: 2rem;
+          border: 1px solid #444;
+          border-radius: 10px;
+          padding: 1rem;
+          background-color: #111;
+          color: white;
+
+          .post-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1rem;
+            color: #2196f3;
+
+            .post-timestamp {
+              font-family: 'Lato', sans-serif;
+              font-size: 0.8rem;
+              white-space: nowrap;
+            }
+          }
+
+          .post-body {
+            border: 1px solid #8e8e8e;
+            border-radius: 0.5rem;
+            padding: 12px;
+
+            .post-content-preview {
+              font-size: 1.2rem;
+              color: white;
+              margin-bottom: 0.5rem;
+              min-height: 120px;
+            }
+
+            .post-view-full {
+              color: #f44336;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+
+          .post-comment-preview {
+            padding: 0.5rem;
+            border-left: 2px solid #2196f3;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+
+            .comment-author {
+              color: #2196f3;
+              font-weight: bold;
+              display: block;
+            }
+
+            .time{
+              display: flex;
+              justify-content: end;
+              width: 100%;
+
+              .comment-timestamp {
+                font-size: 0.75rem;
+                color: #90caf9;
+                margin-top: 0.25rem;
+                align-self: end;
+            }
+            }
+
+
+          }
+
+          .post-footer {
+            text-align: right;
+
+            .view-all-comments {
+              color: #f44336;
+              font-size: 0.9rem;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -209,7 +209,7 @@ body.modal-open {
   background: transparent;
   border: none;
   font-size: 2rem;
-  color: #454545;
+  color: #333333;
   cursor: pointer;
   transition: color 0.2s;
 }
