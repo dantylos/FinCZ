@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <excludedPredefinedLibrary name="FinCZ/gitignore/node_modules" />
     <file url="PROJECT" libraries="{embed-widget-market-overview}" />
-    <includedPredefinedLibrary name="Node.js Core" />
+    <excludedPredefinedLibrary name="FinCZ/gitignore/node_modules" />
   </component>
 </project>
