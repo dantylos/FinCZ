@@ -240,17 +240,17 @@ app.listen(PORT, () => {
     console.log(`Infinite loading page: http://${HOST}:${PORT}/infinite-loading.html`);
 });
 
-// Server shutdown
-process.on('SIGINT', () => {
-    console.log('\n Server shutdown...');
-    cache.flushAll();
-    process.exit(0);
-});
-
-process.on('SIGTERM', () => {
-    console.log('\n Server shutdown...');
-    cache.flushAll();
-    process.exit(0);
-});
+// // Server shutdown
+// process.on('SIGINT', () => {
+//     console.log('\n Server shutdown...');
+//     cache.flushAll();
+//     process.exit(0);
+// });
+//
+// process.on('SIGTERM', () => {
+//     console.log('\n Server shutdown...');
+//     cache.flushAll();
+//     process.exit(0);
+// });
 
 module.exports = app;
