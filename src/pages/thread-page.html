@@ -142,13 +142,11 @@
 
     renderThreadInfo(threadData);
 
-    // Инициализируем загрузчик постов
+    // Posts rendering initialization
     const postLoader = initPostLoader(threadId, '#postList');
 
-    // Инициализируем создатель постов с callback для обновления списка
     const onPostCreated = (newPost) => {
       console.log('New post created:', newPost);
-      // Обновляем список постов после создания нового поста
       if (postLoader) {
         postLoader.refreshPosts();
       }

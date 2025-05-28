@@ -105,7 +105,7 @@ const refreshThreads = () => {
 };
 
 export const initThreadLoader = () => {
-    // Загружаем треды при инициализации
+    // Render all the threads on page initiation
     renderThreads();
 
     return {

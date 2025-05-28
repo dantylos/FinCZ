@@ -1,6 +1,5 @@
 const { getThreadById, getThreadPosts } = require('./Repository');
 
-// Сервис для получения детальной информации о треде
 const getThreadDetailService = async (threadId) => {
     const thread = await getThreadById(threadId);
 
@@ -10,7 +9,6 @@ const getThreadDetailService = async (threadId) => {
 
     const posts = await getThreadPosts(threadId);
 
-    // Форматируем данные для фронтенда
     const formattedThread = {
         id: thread.id,
         title: thread.title,
@@ -49,7 +47,7 @@ const getThreadDetailService = async (threadId) => {
     };
 };
 
-// Вспомогательная функция для форматирования даты
+// Additional helper function for formatting dates
 const formatDate = (date) => {
     if (!date) return '';
 

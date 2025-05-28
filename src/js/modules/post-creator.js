@@ -1,9 +1,9 @@
 import { AuthUtils } from './authUtils.js';
 
-// API URL для создания постов
+// API URL for post creation
 const API_BASE_URL = 'https://financecz.onrender.com/api/posts';
 
-// Функция для создания поста
+// Post creation function
 async function createPost(postData) {
     if (!AuthUtils.isAuthenticated()) {
         alert('Please log in to create a post');
@@ -49,13 +49,13 @@ async function createPost(postData) {
     }
 }
 
-// Функция для инициализации формы создания поста
+// Post creation form initialization function
 function initPostForm(threadId, onPostCreated = null) {
     const postForm = document.getElementById('createPostForm');
     const postCreatorSection = document.getElementById('post-creator-section') ||
         document.querySelector('.post-creator');
 
-    // Скрываем форму для неавторизованных пользователей
+    // Form is hidden if user is not logged in
     if (!AuthUtils.isAuthenticated()) {
         if (postCreatorSection) {
             postCreatorSection.style.display = 'none';
@@ -73,13 +73,12 @@ function initPostForm(threadId, onPostCreated = null) {
             const submitButton = postForm.querySelector('button[type="submit"]') ||
                 document.getElementById('postPostBtn');
 
-            // Блокируем кнопку во время отправки
+            // Blocking the submit button while the request is being processed to prevent double submissions
             if (submitButton) {
                 submitButton.disabled = true;
                 const originalText = submitButton.textContent;
                 submitButton.textContent = 'Posting...';
 
-                // Возвращаем кнопку в исходное состояние через функцию
                 const resetButton = () => {
                     submitButton.disabled = false;
                     submitButton.textContent = originalText;
@@ -93,10 +92,8 @@ function initPostForm(threadId, onPostCreated = null) {
                 const result = await createPost(postData);
 
                 if (result) {
-                    // Очищаем форму при успехе
                     postForm.reset();
 
-                    // Вызываем callback функцию, если она передана
                     if (onPostCreated && typeof onPostCreated === 'function') {
                         onPostCreated(result);
                     }
@@ -110,7 +107,6 @@ function initPostForm(threadId, onPostCreated = null) {
     }
 }
 
-// Функция для установки обработчика на текстовое поле (автоматическое изменение размера)
 function setupTextarea() {
     const textarea = document.getElementById('content');
     if (textarea) {
@@ -121,7 +117,7 @@ function setupTextarea() {
     }
 }
 
-// Основная функция инициализации создателя постов
+// Post creator initialization function
 export function initPostCreator(threadId, onPostCreated = null) {
     if (!threadId) {
         console.error('Thread ID is required for post creator');
@@ -130,10 +126,7 @@ export function initPostCreator(threadId, onPostCreated = null) {
 
     console.log('Initializing post creator for thread:', threadId);
 
-    // Инициализируем форму
     initPostForm(threadId, onPostCreated);
-
-    // Настраиваем textarea
     setupTextarea();
 
     return {

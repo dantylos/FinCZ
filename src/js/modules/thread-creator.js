@@ -1,9 +1,8 @@
 import { AuthUtils } from './authUtils.js';
 
-// API URL для создания тредов
+// API URL for thread creation
 const API_BASE_URL = 'https://financecz.onrender.com/api/threads';
 
-// Функция для создания треда
 async function createThread(threadData) {
     if (!AuthUtils.isAuthenticated()) {
         alert('Please log in to create a thread');
@@ -65,7 +64,7 @@ function initThreadForm(onThreadCreated = null) {
 
             const submitButton = threadForm.querySelector('button[type="submit"]');
 
-            // Блокируем кнопку во время отправки
+            // Blocking the submit button while the request is being processed to prevent double submissions
             if (submitButton) {
                 submitButton.disabled = true;
                 const originalText = submitButton.textContent;
@@ -79,16 +78,15 @@ function initThreadForm(onThreadCreated = null) {
                 const result = await createThread(threadData);
 
                 if (result) {
-                    // Очищаем форму при успехе
+                    // Clear the form after successful creation
                     threadForm.reset();
 
-                    // Вызываем callback функцию, если она передана
                     if (onThreadCreated && typeof onThreadCreated === 'function') {
                         onThreadCreated(result);
                     } else {
-                        // По умолчанию перенаправляем на созданный тред
+                        // Update the page to show the newly created thread
                         alert('Thread created successfully!');
-                        window.location.href = `pages/thread-page.html?id=${result.id}`;
+                        window.location.href = ``;
                     }
                 }
 
@@ -98,7 +96,6 @@ function initThreadForm(onThreadCreated = null) {
     }
 }
 
-// Функция для настройки текстовых полей
 function setupTextareas() {
     const textareas = document.querySelectorAll('textarea');
     textareas.forEach(textarea => {
@@ -112,10 +109,7 @@ function setupTextareas() {
 export function initThreadCreator(onThreadCreated = null) {
     console.log('Initializing thread creator');
 
-    // Инициализируем форму
     initThreadForm(onThreadCreated);
-
-    // Настраиваем textareas
     setupTextareas();
 
     return {
