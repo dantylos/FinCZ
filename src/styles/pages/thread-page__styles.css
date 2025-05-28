@@ -162,6 +162,7 @@
   color: white;
   margin-bottom: 0.5rem;
   min-height: 120px;
+  max-width: 100%;
 }
 .thread-main .post .container .postList .post-item .post-body .post-view-full {
   color: #f44336;

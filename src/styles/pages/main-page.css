@@ -89,6 +89,8 @@ main #main-wrapper .container .search {
   padding: 0;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  width: 28.8px;
+  height: 28.8px;
 }
 main #main-wrapper .container .search:hover, main #main-wrapper .container .search:focus {
   opacity: 0.8;
@@ -97,8 +99,8 @@ main #main-wrapper .container .search:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.5);
   outline-offset: 2px;
 }
-main #main-wrapper .container .search-image {
-  width: 1.8rem;
+main #main-wrapper .container .search .search-image {
+  width: 100%;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -237,6 +239,7 @@ main #main-wrapper .container #threadList .thread-item__info .thread-item__name 
   font-size: 1.5rem;
   font-weight: 600;
   display: block;
+  margin-right: 0.5rem;
 }
 main #main-wrapper .container #threadList .thread-item__info .thread-item__creator {
   font-size: 0.8rem;
