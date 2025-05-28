@@ -8,18 +8,18 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   display: none;
+  align-items: center;
+  justify-content: center;
 }
 .policy-modal:active {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .policy-modal .modal-content {
   background: #fff;
   width: 90%;
   max-width: 720px;
   border-radius: 12px;
-  padding: 4rem 1.5rem 2rem;
+  padding: 2rem 1.25rem 1.5rem;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 .policy-modal .modal-content .border_t {
@@ -90,7 +90,6 @@
   background-color: #101010;
   opacity: 60%;
   color: #fff;
-  border: none;
 }
 .policy-modal .modal-content .modal-footer .reject-btn {
   background: none;

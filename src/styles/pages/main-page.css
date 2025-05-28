@@ -83,23 +83,22 @@ main #main-wrapper .container .search-container {
   gap: 1.5rem;
   margin: auto;
 }
-main #main-wrapper .container .avatar-button {
+main #main-wrapper .container .search {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
-main #main-wrapper .container .avatar-button:hover, main #main-wrapper .container .avatar-button:focus {
+main #main-wrapper .container .search:hover, main #main-wrapper .container .search:focus {
   opacity: 0.8;
 }
-main #main-wrapper .container .avatar-button:focus-visible {
+main #main-wrapper .container .search:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.5);
   outline-offset: 2px;
 }
-main #main-wrapper .container .avatar-image {
+main #main-wrapper .container .search-image {
   width: 1.8rem;
-  height: 2rem;
   border-radius: 50%;
   object-fit: cover;
 }

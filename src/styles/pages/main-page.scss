@@ -132,7 +132,7 @@ main{
         margin: auto;
       }
 
-      .avatar-button {
+      .search {
         background: none;
         border: none;
         padding: 0;
@@ -149,9 +149,8 @@ main{
         }
       }
 
-      .avatar-image {
+      .search-image {
         width: 1.8rem;
-        height: 2rem;
         border-radius: 50%;
         object-fit: cover;
       }

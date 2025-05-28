@@ -1,0 +1,49 @@
+// Media queries
+@media  screen and (max-width: 1250px) {
+  .container{
+    padding: 0 12px;
+  }
+}
+
+
+@media screen and (max-width: 1080px){
+  header .container nav .left-menu-list{
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+
+@media screen and (max-width: 880px) {
+  header .container nav .left-menu-list {
+    display: flex;
+    gap: 2rem;
+  }
+
+  header .container nav .left-menu-list li a{
+    color: #fff;
+    text-transform: lowercase;
+    letter-spacing: 0.15rem;
+    transition: 0.1s;
+    font-size: 12px;
+  }
+
+  main{
+    gap: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 560px) {
+  .policy-modal{
+    .modal-content {
+      width: 96%;
+      padding: 1.5rem 1rem 1.25rem;
+
+      .policy-modal .modal-content .modal-body {
+        max-height: 70vh;
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
