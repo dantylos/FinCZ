@@ -32,7 +32,7 @@ const createThreadElement = (thread) => {
     }
 
     li.innerHTML = `
-        <a href="#"></a>
+        <a href="src/pages/thread-page.html?id=${thread.id}"></a>
         <div class="thread-item__info">
             <div class="thread-item__main">
                 <p class="thread-item__name">${escapeHtml(thread.title)}</p>
@@ -48,10 +48,15 @@ const createThreadElement = (thread) => {
         </div>
     `;
 
+    li.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = `src/pages/thread-page.html?id=${thread.id}`;
+    });
+
     return li;
 };
 
-// Функция для экранирования HTML
+// HTML shielding
 const escapeHtml = (text) => {
     const map = {
         '&': '&amp;',
@@ -63,7 +68,6 @@ const escapeHtml = (text) => {
     return text ? text.replace(/[&<>"']/g, (m) => map[m]) : '';
 };
 
-// Функция для отображения тредов в списке
 const renderThreads = async () => {
     console.log('renderThreads called'); // Для отладки
     const threadList = qs('#threadList');
@@ -72,16 +76,13 @@ const renderThreads = async () => {
         return;
     }
 
-    // Очищаем существующий контент (удаляем тестовый тред)
     threadList.innerHTML = '';
 
-    // Показываем индикатор загрузки
     threadList.innerHTML = '<li class="loading">Loading threads...</li>';
 
     try {
         const threads = await fetchThreads();
 
-        // Очищаем индикатор загрузки
         threadList.innerHTML = '';
 
         if (threads.length === 0) {
@@ -89,7 +90,6 @@ const renderThreads = async () => {
             return;
         }
 
-        // Создаем и добавляем элементы тредов
         threads.forEach(thread => {
             const threadElement = createThreadElement(thread);
             threadList.appendChild(threadElement);
@@ -100,17 +100,14 @@ const renderThreads = async () => {
     }
 };
 
-// Функция для обновления списка тредов
 const refreshThreads = () => {
     renderThreads();
 };
 
-// Инициализация модуля загрузки тредов
 export const initThreadLoader = () => {
-    // Загружаем треды при инициализации
+    // Render all the threads on page initiation
     renderThreads();
 
-    // Возвращаем функции для использования в других модулях
     return {
         refreshThreads,
         renderThreads
