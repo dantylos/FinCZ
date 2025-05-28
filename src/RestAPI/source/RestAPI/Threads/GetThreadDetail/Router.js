@@ -4,7 +4,7 @@ const { getThreadDetailService } = require('./Service');
 
 const router = express.Router();
 
-// GET /threads/:id - получить детальную информацию о треде и его постах
+// GET /threads/:id - retrieving details of a thread by its ID
 router.get('/:id', asyncHandler(async (req, res) => {
     const threadId = req.params.id;
 

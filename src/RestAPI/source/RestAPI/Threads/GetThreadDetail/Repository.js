@@ -1,6 +1,6 @@
 const { executeQuery, executeQuerySingle } = require('../../utils/dbUtils');
 
-// Получение конкретного треда с информацией об авторе
+// Getting details of a exact thread
 const getThreadById = async (threadId) => {
     const query = `
         SELECT
@@ -20,7 +20,7 @@ const getThreadById = async (threadId) => {
     return await executeQuerySingle(query, [threadId]);
 };
 
-// Получение всех постов треда с информацией об авторах и последних комментариях
+// Retrieving all posts connected to a thread
 const getThreadPosts = async (threadId) => {
     const query = `
         SELECT

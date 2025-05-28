@@ -1,9 +1,9 @@
 import { qs } from '../utils/dom-utils.js';
 
-// API URL для получения постов конкретного треда
+// API URL for post rendering
 const API_BASE_URL = 'https://financecz.onrender.com/api/threads';
 
-// Функция для загрузки постов треда с сервера
+// Fetch info about a certain thread
 const fetchThreadPosts = async (threadId) => {
     try {
         const response = await fetch(`${API_BASE_URL}/${threadId}`);
@@ -18,12 +18,12 @@ const fetchThreadPosts = async (threadId) => {
     }
 };
 
-// Функция для создания HTML элемента поста
+// Generating an HTML element for a post
 const createPostElement = (post) => {
     const li = document.createElement('li');
     li.className = 'post-item';
 
-    // Формируем HTML для превью комментария
+    // HTML element for the last comment preview
     let commentPreview = '';
     if (post.last_comment && post.last_comment.content) {
         commentPreview = `
@@ -53,7 +53,7 @@ const createPostElement = (post) => {
     return li;
 };
 
-// HTML экранирование
+// HTML shielding
 const escapeHtml = (text) => {
     const map = {
         '&': '&amp;',
@@ -65,7 +65,7 @@ const escapeHtml = (text) => {
     return text ? text.replace(/[&<>"']/g, (m) => map[m]) : '';
 };
 
-// Функция для рендеринга постов в список
+// Rendering the posts for a certain thread
 const renderPosts = async (threadId, targetElementId = '#postList') => {
     console.log('renderPosts called for thread:', threadId);
 
@@ -75,13 +75,11 @@ const renderPosts = async (threadId, targetElementId = '#postList') => {
         return;
     }
 
-    // Показываем индикатор загрузки
     postList.innerHTML = '<li class="loading">Loading posts...</li>';
 
     try {
         const posts = await fetchThreadPosts(threadId);
 
-        // Очищаем список
         postList.innerHTML = '';
 
         if (posts.length === 0) {
@@ -89,7 +87,6 @@ const renderPosts = async (threadId, targetElementId = '#postList') => {
             return;
         }
 
-        // Создаем и добавляем элементы постов
         posts.forEach(post => {
             const postElement = createPostElement(post);
             postList.appendChild(postElement);
@@ -102,19 +99,17 @@ const renderPosts = async (threadId, targetElementId = '#postList') => {
     }
 };
 
-// Функция для обновления списка постов
 const refreshPosts = (threadId, targetElementId = '#postList') => {
     renderPosts(threadId, targetElementId);
 };
 
-// Основная функция инициализации загрузчика постов
+// Post rendering initialization
 export const initPostLoader = (threadId, targetElementId = '#postList') => {
     if (!threadId) {
         console.error('Thread ID is required for post loader');
         return null;
     }
 
-    // Загружаем посты при инициализации
     renderPosts(threadId, targetElementId);
 
     return {
