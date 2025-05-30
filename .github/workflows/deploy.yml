@@ -1,0 +1,52 @@
+name: Deploy FinCZ Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-backend:
+    name: Deploy Backend to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Add SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.EC2_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+
+    - name: Copy backend files to EC2
+      run: |
+        rsync -avz -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" ./src/RestAPI/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:~/FinCZ/src/RestAPI
+
+    - name: Restart backend on EC2
+      run: |
+        ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+        cd ~/FinCZ/src/RestAPI
+        npm install
+        pkill node || true
+        nohup node source/application.js > ~/backend.log 2>&1 &
+        EOF
+
+  deploy-frontend:
+    name: Deploy Frontend to S3
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install AWS CLI
+      run: sudo apt install -y awscli
+
+    - name: Sync frontend to S3
+      run: |
+        aws configure set aws_access_key_id "${{ secrets.AWS_ACCESS_KEY_ID }}"
+        aws configure set aws_secret_access_key "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+        aws configure set region "${{ secrets.AWS_REGION }}"
+        aws s3 sync ./src s3://${{ secrets.S3_BUCKET }} --delete
