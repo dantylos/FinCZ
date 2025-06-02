@@ -30,3 +30,20 @@ form.addEventListener('submit', function (e) {
     console.log("Saved to localStorage:", data);
     result.textContent = "✅ Profile saved (mock) — email notification would be triggered for changes to username, email, name, specialist verification, and account status.";
 });
+
+
+// Link referrer
+document.addEventListener("DOMContentLoaded", () => {
+    const closeLink = document.querySelector(".account-menu a");
+
+    closeLink.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        // If there is a referrer, go back to it; otherwise fallback to homepage
+        if (document.referrer && document.referrer !== location.href) {
+            window.location.href = document.referrer;
+        } else {
+            window.location.href = "../../../index.html"; // fallback
+        }
+    });
+});

@@ -1,11 +1,8 @@
-.thread-header {
-  padding: 1rem 1.5rem;
-}
 .thread-header .container {
   display: flex;
 }
 .thread-header .container .logo {
-  top: -3px;
+  top: -2px;
 }
 
 .thread-main {
