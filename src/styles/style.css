@@ -45,4 +45,11 @@ body {
   background-color: #F7C005;
 }
 
+.profile-link a {
+  color: #fff;
+  background: #005cd2;
+  padding: 0.35rem 0.75rem;
+  border-radius: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -25,9 +25,13 @@
             align-items: center;
         }
 
-        .account-menu img{
-            max-width: 32px;
-            display: block;
+        .account-menu a:after{
+            content: "";
+            display: inline-block;
+            background-image: url("../assets/icons/close.svg");
+            width: 32px;
+            height: 32px;
+            position: relative;
         }
 
         h3 {
@@ -91,7 +95,7 @@
 <div class="container">
     <div class="account-menu">
         <h3>User Account</h3>
-        <a href="#"><img src="../assets/icons/close-button.png" alt="Close"></a>
+        <a href="#"></a>
     </div>
 
     <form id="accountForm" novalidate>

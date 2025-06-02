@@ -69,6 +69,13 @@ header{
       .right-menu-list{
         display: flex;
         gap: 1.5rem;
+        align-items: center;
+
+        .profile-link{
+          a{
+            display: none;
+          }
+        }
 
         li{
           .sign-in-btn{
@@ -129,13 +136,10 @@ main{
         display: flex;
         align-items: center;
         gap: 1.5rem;
-        margin: auto;
       }
 
       .search {
         background: none;
-        border: none;
-        padding: 0;
         cursor: pointer;
         transition: opacity 0.3s ease;
         width: 28.8px;
@@ -299,7 +303,7 @@ main{
           }
 
           &__info {
-            color: #54aafc;
+            color: #76bcff;
             text-align: left;
             position: relative;
 
