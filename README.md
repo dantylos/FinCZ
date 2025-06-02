@@ -11,7 +11,7 @@ FinanceCZ is a web platform designed to facilitate communication and knowledge s
 
 ## Technologies Used  
 - **Frontend:** HTML5, SCSS, JavaScript  
-- **Backend:** Node.js  
+- **Backend:** Node.js, RestAPI  
 - **Database:** PostgreSQL  
 
 ## Usage  
