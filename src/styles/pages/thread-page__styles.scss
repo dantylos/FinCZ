@@ -28,21 +28,30 @@
       .thread-item{
         width: 100%;
         background: #013E99;
-        color: #fff;
         padding: 1rem;
-        border-radius: 6px;
-        margin-bottom: 12px;
+        border-radius: 8px;
+        margin-bottom: inherit;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         display: flex;
         align-items: flex-start;
-        gap: 2rem;
+        gap: 1.5rem;
         border: 2px solid #323232;
         box-sizing: border-box;
+        color: #76bcff;
 
-        .thread-item__name {
-          font-size: 1.5rem;
-          font-weight: 600;
-          display: block;
+        .thread-item__main{
+          max-width: 200px;
+
+          .thread-item__name{
+            font-size: 1.25rem;
+            line-height: 24px;
+            margin-bottom: 6px;
+            font-weight: 500;
+          }
+        }
+
+        .thread-item__description{
+          width: 100%;
         }
 
         .thread-item__creator {
@@ -182,7 +191,8 @@
               color: white;
               margin-bottom: 0.5rem;
               min-height: 120px;
-              max-width: 100%;
+              width: 100%;
+              line-break: anywhere;
             }
 
             .post-view-full {

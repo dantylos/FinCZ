@@ -36,6 +36,9 @@
   margin-bottom: 0.5rem;
   min-height: 120px;
 }
+.post-main .container .post-item .post-body .post-content-preview#text {
+  max-width: 656px;
+}
 .post-main .container .post-item .post-body .post-view-full {
   color: #f44336;
   text-decoration: underline;
@@ -88,6 +91,7 @@
 }
 .post-main .container #createCommentForm textarea:focus {
   border: 1px solid #b7e3ff;
+  opacity: 0.6;
 }
 .post-main .container #createCommentForm button {
   align-self: flex-start;

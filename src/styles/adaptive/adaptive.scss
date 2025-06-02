@@ -38,6 +38,10 @@
   main aside{
     display: none;
   }
+
+  .thread-main .post .container .postList .post-item .post-body .post-content-preview {
+    font-size: 1rem;
+  }
 }
 
 
@@ -73,6 +77,27 @@
   main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-date{
     font-size: 0.8rem;
     letter-spacing: 0.3px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .modal {
+    min-width: inherit;
+  }
+
+  .thread-main .post .container .thread-item .thread-item__creator {
+    font-size: 0.65rem;
+    display: block;
+  }
+
+  .thread-main .post .container .thread-item .thread-item__main .thread-item__name {
+    font-size: 1.1rem;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+
+  .thread-main .post .container .thread-item .thread-item__description p{
+    font-size: 0.8rem;
   }
 }
 
@@ -126,6 +151,10 @@
     font-size: 0.7rem;
     margin-top: 4px;
   }
+
+  .thread-main .post .container .postList .post-item .post-body .post-view-full {
+    font-size: 0.85rem;
+  }
 }
 
 
@@ -140,5 +169,17 @@
 
   main #main-wrapper .container #threadList .thread-item__info .thread-item__name {
     font-size: 1.1rem;
+  }
+
+  .thread-main .post .container .thread-item .thread-item__main .thread-item__name {
+    font-size: 1rem;
+  }
+
+  .thread-main .post .container .thread-item .thread-item__creator {
+    font-size: 0.6rem;
+  }
+
+  .thread-main .post .container .postList .post-item .post-body .post-content-preview {
+    font-size: 0.85rem;
   }
 }

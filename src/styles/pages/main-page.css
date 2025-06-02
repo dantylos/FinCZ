@@ -34,6 +34,10 @@ header .container nav .left-menu-list li a:hover {
 header .container nav .right-menu-list {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
+}
+header .container nav .right-menu-list .profile-link a {
+  display: none;
 }
 header .container nav .right-menu-list li .sign-in-btn {
   background-color: #e8b304;
@@ -81,12 +85,9 @@ main #main-wrapper .container .search-container {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin: auto;
 }
 main #main-wrapper .container .search {
   background: none;
-  border: none;
-  padding: 0;
   cursor: pointer;
   transition: opacity 0.3s ease;
   width: 28.8px;
@@ -231,7 +232,7 @@ main #main-wrapper .container #threadList .thread-item a {
   position: absolute;
 }
 main #main-wrapper .container #threadList .thread-item__info {
-  color: #54aafc;
+  color: #76bcff;
   text-align: left;
   position: relative;
 }
