@@ -3,7 +3,7 @@ $white: #fff;
 $light-grey: #c0c0c0;
 $grey: #8e8e8e;
 $dark-grey: #454545;
-$black: #101010;
+$black: #050505;
 $blue: #013E99;
 
 $blue2: #1A4D8F;
@@ -385,24 +385,82 @@ main{
 
 // Footer
 footer{
+  padding: 4rem 0 2rem;
   background-color: $black;
-  padding: 8px 0;
 
   .container{
+    max-width: 400px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
 
-    ul{
-      @include basic-flex;
-      gap: 120px;
+    .top-button{
+      margin: auto;
+      padding: 0.75rem 1rem;
+      border: 2px solid $blue;
+      border-radius: 10px;
+      transition: 0.2s;
 
-      li{
-        a{
-          color: $white;
-          font-size: 14px;
-          letter-spacing: 1px;
-          @include link-hover;
+      &:hover{
+        background-color: $blue;
+      }
+
+      a{
+        color: $white;
+        font-size: 1rem;
+        transition: 0.2s;
+        letter-spacing: 1px;
+        font-weight: 500;
+
+        &:hover{
+          transform: translateY(-2px);
         }
+      }
+    }
+
+    .follow-links{
+      color: $white;
+      margin-top: 1rem;
+
+      p{
+        text-align: center;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      ul{
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        li{
+          max-width: 400px;
+
+          img{
+            display: block;
+            width: 100%;
+            transition: 0.15s;
+
+            &:hover{
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+
+    .down-menu{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      p{
+        color: $white;
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
       }
     }
   }

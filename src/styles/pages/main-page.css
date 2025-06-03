@@ -1,6 +1,6 @@
 header {
   opacity: 80%;
-  background-color: #101010;
+  background-color: #050505;
   padding: 0.75rem 1.5rem;
   position: sticky;
   top: 0;
@@ -194,7 +194,7 @@ main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn {
 }
 main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn:hover {
   background-color: #fff41f;
-  color: #101010;
+  color: #050505;
 }
 main #main-wrapper .container .thread-creator .visually-hidden {
   position: absolute;
@@ -296,27 +296,72 @@ main aside .box .tradingview-widget-container {
 }
 
 footer {
-  background-color: #101010;
-  padding: 8px 0;
+  padding: 4rem 0 2rem;
+  background-color: #050505;
 }
 footer .container {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer .container .top-button {
+  margin: auto;
+  padding: 0.75rem 1rem;
+  border: 2px solid #013E99;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+footer .container .top-button:hover {
+  background-color: #013E99;
+}
+footer .container .top-button a {
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.2s;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+footer .container .top-button a:hover {
+  transform: translateY(-2px);
+}
+footer .container .follow-links {
+  color: #fff;
+  margin-top: 1rem;
+}
+footer .container .follow-links p {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+footer .container .follow-links ul {
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
-}
-footer .container ul {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 120px;
+  gap: 2rem;
 }
-footer .container ul li a {
+footer .container .follow-links ul li {
+  max-width: 400px;
+}
+footer .container .follow-links ul li img {
+  display: block;
+  width: 100%;
+  transition: 0.15s;
+}
+footer .container .follow-links ul li img:hover {
+  transform: scale(1.1);
+}
+footer .container .down-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer .container .down-menu p {
   color: #fff;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-footer .container ul li a:hover {
-  transform: scale(1.05);
-  color: #c0c0c0;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 /*# sourceMappingURL=main-page.css.map */
