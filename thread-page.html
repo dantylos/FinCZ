@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title id="page-title">Thread Page</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <style>
+      a, button, select, input, textarea {
+        transition: all 0.3s ease;
+      }
+</style>
+</head>
+<body>
+
+<header class="thread-header" style="background-color: #0d0d0d; padding: 1rem 0;">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; font-family: 'Poppins', sans-serif; color: white;">
+    <a href="../../index.html" style="display: flex; align-items: center; text-decoration: none; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <img src="../assets/icons/logo.svg" alt="Logo" style="height: 40px; margin-right: 10px;">
+    </a>
+
+    <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+      
+      <a href="../../index.html" title="Search" style="color: white; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <svg width="24" height="24" fill="currentColor"><path d="M10 2a8 8 0 105.293 14.293l4.147 4.147 1.414-1.414-4.147-4.147A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z"/></svg>
+      </a>
+
+      
+      <a href="../../index.html" title="New Post" style="color: white; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+        <svg width="24" height="24" fill="currentColor"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/></svg>
+      </a>
+
+      
+      <a href="account.html" class="profile-btn" style="border: 2px solid #1e90ff; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; transition: all 0.3s; font-family: 'Poppins', sans-serif;" onmouseover="this.style.backgroundColor='#1e90ff'; this.style.color='white'; this.style.transform='scale(1.05)'" onmouseout="this.style.backgroundColor='transparent'; this.style.color='white'; this.style.transform='scale(1)'">
+        Profile
+      </a>
+
+      
+      <select aria-label="Language select" style="background-color: #1e1e1e; color: white; border: 1px solid #555; border-radius: 4px; padding: 4px 8px; font-family: 'Poppins', sans-serif;">
+        <option value="en">EN</option>
+        <option value="cz">CZ</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+  <main class="thread-main" id="main">
+
+    <section class="post">
+      <div class="container">
+
+        <!-- Thread Information -->
+        <div class="thread-item" id="thread-info">
+          <div class="thread-item__main">
+            <p class="thread-item__name" id="thread-title">Loading...</p>
+            <p class="thread-item__creator" id="thread-creator">Loading...</p>
+          </div>
+
+          <div class="thread-item__description">
+            <p id="thread-description">Loading...</p>
+          </div>
+        </div>
+
+        <!-- Post Creator -->
+        <div class="post-creator" id="post-creator-section">
+          <form id="createPostForm" name="CreatePost">
+
+            <label for="content">
+              <textarea id="content"
+                        name="content"
+                        placeholder="Post content..."
+                        required
+                        maxlength="400"></textarea>
+            </label>
+
+            <button id="postPostBtn" type="submit">Post</button>
+
+          </form>
+        </div>
+
+        <!-- Posts List -->
+        <ul class="postList" id="postList">
+          <li class="loading-item">Loading posts...</li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background-color: #0d0d0d; color: white; padding: 3rem 1rem 1rem; font-family: 'Poppins', sans-serif;">
+  <div class="container" style="
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  ">
+
+    
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"
+      style="background: none; border: 2px solid #1e90ff; color: #1e90ff; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; margin-bottom: 1.5rem; transition: all 0.3s;"
+      onmouseover="this.style.backgroundColor='#1e90ff'; this.style.color='white'; this.style.transform='scale(1.1)'" 
+      onmouseout="this.style.backgroundColor='transparent'; this.style.color='#1e90ff'; this.style.transform='scale(1)'">
+      Back to Top
+    </button>
+
+    
+    <p style="margin: 0 0 1rem 0; font-weight: 500;">Follow Us</p>
+
+    
+    <div style="display: flex; justify-content: center; gap: 2.5rem; margin-bottom: 2rem;">
+      
+      <a href="#" title="X" style="color: white;" onmouseover="this.style.color='#1da1f2'; this.style.transform='scale(1.2)'" onmouseout="this.style.color='white'; this.style.transform='scale(1)'">
+        <svg width="36" height="36" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12c0 1.1.9 2 2 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm-3.12 5.5l-2.83 3.64L18 18h-3l-2.48-3.18L10 18H7l4.24-5.5L6 6h3l2.48 3.18L14 6h3l-4.12 5.5z"/></svg>
+      </a>
+      
+      <a href="#" title="Instagram" style="color: white;" onmouseover="this.style.color='#E1306C'; this.style.transform='scale(1.2)'" onmouseout="this.style.color='white'; this.style.transform='scale(1)'">
+        <svg width="36" height="36" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5C18.32 20 20 18.32 20 16.25v-8.5C20 5.68 18.32 4 16.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.25-3a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5z"/></svg>
+      </a>
+      
+      <a href="#" title="GitHub" style="color: white;" onmouseover="this.style.color='#6cc644'; this.style.transform='scale(1.2)'" onmouseout="this.style.color='white'; this.style.transform='scale(1)'">
+        <svg width="36" height="36" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0a12 12 0 00-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.61-4.04-1.61a3.18 3.18 0 00-1.34-1.76c-1.1-.76.08-.75.08-.75a2.52 2.52 0 011.84 1.24 2.55 2.55 0 003.49 1 2.55 2.55 0 01.76-1.6c-2.67-.3-5.48-1.34-5.48-5.96a4.66 4.66 0 011.24-3.23 4.32 4.32 0 01.12-3.18s1-.32 3.3 1.23a11.3 11.3 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23a4.32 4.32 0 01.12 3.18 4.66 4.66 0 011.24 3.23c0 4.64-2.81 5.66-5.49 5.96a2.86 2.86 0 01.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0012 0z"/></svg>
+      </a>
+    </div>
+
+    
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+      <a href="../../index.html">
+        <img src="../assets/icons/logo.svg" alt="Logo" style="height: 30px;">
+      </a>
+      <p style="margin: 0; font-size: 0.85rem;">&copy; 2025 FinanceCZ — All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script type="module">
+  import { AuthUtils } from '../js/modules/authUtils.js';
+  import { initPostLoader } from '../js/modules/post-loader.js';
+  import { initPostCreator } from '../js/modules/post-creator.js';
+
+  const getThreadIdFromUrl = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+  };
+
+  // API URL
+  const API_BASE_URL = 'https://financecz.onrender.com/api';
+
+  // HTML shielding
+  const escapeHtml = (text) => {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    return text ? text.replace(/[&<>"']/g, (m) => map[m]) : '';
+  };
+
+  const loadThreadInfo = async (threadId) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/threads/${threadId}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      return data.thread;
+    } catch (error) {
+      console.error('Error loading thread info:', error);
+      return null;
+    }
+  };
+
+  // Render thread info
+  const renderThreadInfo = (thread) => {
+    document.getElementById('page-title').textContent = thread.title;
+    document.getElementById('thread-title').textContent = thread.title;
+    document.getElementById('thread-creator').textContent = `by ${thread.author.username} • ${thread.formatted_date}`;
+    document.getElementById('thread-description').textContent = thread.body;
+  };
+
+  const initializePage = async () => {
+    const threadId = getThreadIdFromUrl();
+
+    if (!threadId) {
+      document.getElementById('thread-info').innerHTML = '<p>Thread ID not found</p>';
+      document.getElementById('postList').innerHTML = '<li class="error-item">Thread ID not found in URL</li>';
+      return;
+    }
+
+    const threadData = await loadThreadInfo(threadId);
+
+    if (!threadData) {
+      document.getElementById('thread-info').innerHTML = '<p>Failed to load thread data</p>';
+      document.getElementById('postList').innerHTML = '<li class="error-item">Failed to load thread data</li>';
+      return;
+    }
+
+
+    renderThreadInfo(threadData);
+
+    // Posts rendering initialization
+    const postLoader = initPostLoader(threadId, '#postList');
+
+    const onPostCreated = (newPost) => {
+      console.log('New post created:', newPost);
+      if (postLoader) {
+        postLoader.refreshPosts();
+      }
+    };
+
+    initPostCreator(threadId, onPostCreated);
+  };
+
+  document.addEventListener('DOMContentLoaded', initializePage);
+</script>
+
+</body>
+</html>
