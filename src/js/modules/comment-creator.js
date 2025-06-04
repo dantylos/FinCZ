@@ -1,7 +1,7 @@
 import { AuthUtils } from './authUtils.js';
 
 // API URL for comment creation
-const API_BASE_URL = 'https://financ ecz.onrender.com/api/comments';
+const API_BASE_URL = 'https://financecz.onrender.com/api/comments';
 
 // Comment creation function
 async function createComment(commentData) {
