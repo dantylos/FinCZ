@@ -23,7 +23,6 @@ Additionally, special decoy webpage with simulation of a realistic infitine load
 ![Node.js](https://img.shields.io/badge/-Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Express.js](https://img.shields.io/badge/-Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![JQuery](https://img.shields.io/badge/-jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)
 ![Axios](https://img.shields.io/badge/-Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
 ![bcrypt](https://img.shields.io/badge/-bcrypt-B91C2B?style=for-the-badge&logo=npm&logoColor=white)
 ![jsonwebtoken](https://img.shields.io/badge/-jsonwebtoken-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
