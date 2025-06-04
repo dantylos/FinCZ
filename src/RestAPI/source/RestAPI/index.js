@@ -14,6 +14,7 @@ const threadDetailRouter = require('./Threads/GetThreadDetail/Router.js');
 // Импорт роутеров для постов
 const postCreateRouter = require('./Posts/CreatePost/Router.js');
 const postDeleteRouter = require('./Posts/DeletePost/Router.js');
+const postDetailRouter = require('./Posts/GetPostDetails/Router.js');
 
 // Импорт роутеров для комментариев
 const commentCreateRouter = require('./Comments/CreateComment/Router.js');
@@ -32,6 +33,8 @@ mainRouter.use('/threads', threadDetailRouter);
 // Регистрация роутеров для постов
 mainRouter.use('/posts', postCreateRouter);
 mainRouter.use('/posts', postDeleteRouter);
+// Регистрируем новый роутер для получения деталей поста
+mainRouter.use('/posts', postDetailRouter);
 
 // Регистрация роутеров для комментариев
 mainRouter.use('/comments', commentCreateRouter);

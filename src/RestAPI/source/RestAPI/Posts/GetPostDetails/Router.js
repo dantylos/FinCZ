@@ -12,15 +12,13 @@ router.get('/:id', asyncHandler(async (req, res) => {
         return res.status(400).json({ error: 'Post ID is required' });
     }
 
-    try {
-        const postDetail = await getPostDetailService(postId);
-        res.status(200).json(postDetail);
-    } catch (error) {
-        if (error.message === 'Post not found') {
-            return res.status(404).json({ error: 'Post not found' });
-        }
-        throw error; // Re-throw other errors to be handled by asyncHandler
+    const postDetail = await getPostDetailService(postId);
+
+    if (!postDetail) {
+        return res.status(404).json({ error: 'Post not found' });
     }
+
+    res.status(200).json(postDetail);
 }));
 
 module.exports = router;
