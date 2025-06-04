@@ -100,6 +100,8 @@ export function initFormHandler() {
                     modalOverlay.classList.remove('active');
                     document.querySelector('header').style.filter = '';
                     document.querySelector('main').style.filter = '';
+                    // Обновляем отображение после успешной регистрации
+                    window.updateAuthDisplay();
                 }
             } catch (error) {
                 alert('Request failed. Please try again.');
@@ -167,7 +169,7 @@ export function initFormHandler() {
                 } else {
                     alert('Login successful!');
                     // Store auth token
-                    AuthUtils.setToken(result.token);
+                    AuthUtils.setToken(result.token, payload.username);
 
                     // Close a modal and redirect
                     const modalOverlay = document.getElementById('modalOverlay');
@@ -175,7 +177,8 @@ export function initFormHandler() {
                     document.querySelector('header').style.filter = '';
                     document.querySelector('main').style.filter = '';
 
-                    // TODO: Update UI to show logged in state
+                    window.updateAuthDisplay();
+                    location.reload();
                 }
             } catch (error) {
                 alert('Request failed. Please try again.');

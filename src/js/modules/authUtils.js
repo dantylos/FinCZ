@@ -61,8 +61,9 @@ export const AuthUtils = {
     },
 
     // Token management
-    setToken: (token) => {
+    setToken: (token, username) => {
         localStorage.setItem('authToken', token);
+        localStorage.setItem('username', username);
     },
 
     getToken: () => {
