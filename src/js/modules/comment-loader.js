@@ -1,12 +1,12 @@
 import { qs } from '../utils/dom-utils.js';
 
 // API URL for comment rendering
-const API_BASE_URL = 'https://financecz.onrender.com/api/posts';
+const API_BASE_URL = 'https://financecz.onrender.com/api';
 
 // Fetch info about a certain post
 const fetchPostComments = async (postId) => {
     try {
-        const response = await fetch(`${API_BASE_URL}/${postId}`);
+        const response = await fetch(`${API_BASE_URL}/posts/${postId}`);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -50,7 +50,7 @@ const renderComments = async (postId, targetElementId = '#comments') => {
 
     const commentsContainer = qs(targetElementId);
     if (!commentsContainer) {
-        console.log('comments container element not found');
+        console.error('Comments container element not found:', targetElementId);
         return;
     }
 
@@ -74,7 +74,7 @@ const renderComments = async (postId, targetElementId = '#comments') => {
         console.log(`Rendered ${comments.length} comments`);
     } catch (error) {
         console.error('Error rendering comments:', error);
-        commentsContainer.innerHTML = '<div class="error">Error loading comments</div>';
+        commentsContainer.innerHTML = '<div class="error">Error loading comments. Please try again.</div>';
     }
 };
 
