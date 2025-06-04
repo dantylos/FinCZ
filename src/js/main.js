@@ -6,7 +6,7 @@ import { initSecurityQuestion } from './modules/security-question.js';
 import { initFormHandler } from './modules/form-handler.js';
 import { initThreadCreator } from './modules/thread-creator.js';
 import { initThreadLoader } from './modules/thread-loader.js';
-import { AuthUtils } from './modules/authUtils.js'; // Импортируем AuthUtils
+import { AuthUtils } from './modules/authUtils.js';
 
 // Initialize security question before DOM load (as it was)
 initSecurityQuestion();
