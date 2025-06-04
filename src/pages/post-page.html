@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Post-page</title>
     <link rel="stylesheet" href="../styles/style.css">
@@ -12,7 +11,7 @@
 <header class="thread-header">
     <div class="container">
 
-        <a class="logo" href="thread-page.html"><div class="logo-img"><img src="../assets/icons/logo1.svg" alt="Logo"></div></a>
+        <a class="logo" href="../../index.html"><div class="logo-img"><img src="../assets/icons/logo.svg" alt="Logo"></div></a>
 
         <nav>
             <ul class="left-menu-list">
@@ -23,22 +22,59 @@
         </nav>
 
         <div class="profile-link">
-            <a href="#">Profile</a>
+            <a href="account.html">Profile</a>
         </div>
 
     </div>
 </header>
 
-<main class="thread-main">
+<main class="post-main" id="main">
 
-    <section class="post">
+    <section>
         <div class="container">
 
+            <div class="post-item">
+                <div class="post-header">
+                    <span class="post-author">Creator username</span>
+                    <time datetime="2024-05-27T13:45" class="post-timestamp">Was made</time>
+                </div>
 
+                <div class="post-body">
+                    <p class="post-content-preview">Post content</p>
+                </div>
 
+                <form id="createCommentForm" name="createComment" autocomplete="off">
+
+                    <label for="commentContent"></label>
+                    <textarea id="commentContent"
+                              name="commentContent"
+                              placeholder="Write your comment here..."
+                              maxlength="400"
+                              required
+                              aria-label="Comment content"></textarea>
+
+                    <button id="postCommentBtn" type="submit" aria-label="Post comment">Comment</button>
+
+                </form>
+
+                <div class="post-comment-preview" id="comments">
+                    <span class="comment-author">Comment creator username</span>
+                    <p class="comment-preview-text">content</p>
+                    <div class="time"><time datetime="2024-05-27T14:00" class="comment-timestamp">was made</time></div>
+                </div>
+            </div>
         </div>
     </section>
 </main>
+
+<footer>
+    <div class="container">
+        <ul>
+            <li><a href="#main">home</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </div>
+</footer>
 
 </body>
 </html>

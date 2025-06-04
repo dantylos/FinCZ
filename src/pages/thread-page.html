@@ -10,70 +10,77 @@
 </head>
 <body>
 
-<header class="thread-header">
+<header class="thread-header" id="header">
   <div class="container">
-    <a class="logo" href="../index.html"><div class="logo-img"><img src="../assets/icons/logo1.svg" alt="Logo"></div></a>
 
-    <nav>
-      <ul class="left-menu-list">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Topics</a></li>
-      </ul>
-    </nav>
+      <a class="logo" href="../../index.html"><div class="logo-img"><img src="../assets/icons/logo.svg" alt="Logo"></div></a>
 
-    <div class="profile-link">
-      <a href="#">Profile</a>
-    </div>
-  </div>
-</header>
+      <nav>
+        <ul class="left-menu-list">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="#">Topics</a></li>
+        </ul>
+      </nav>
 
-<main class="thread-main">
-  <section class="post">
-    <div class="container">
-
-      <!-- Thread Information -->
-      <div class="thread-item" id="thread-info">
-        <div class="thread-item__main">
-          <p class="thread-item__name" id="thread-title">Loading...</p>
-          <p class="thread-item__creator" id="thread-creator">Loading...</p>
-        </div>
-        <div class="thread-item__description">
-          <p id="thread-description">Loading...</p>
-        </div>
+      <div class="profile-link">
+        <a href="account.html">Profile</a>
       </div>
 
-      <!-- Post Creator -->
-      <div class="post-creator" id="post-creator-section">
-        <form id="createPostForm" name="CreatePost">
-          <label for="content">
+    </div>
+  </header>
+
+  <main class="thread-main" id="main">
+
+    <section class="post">
+      <div class="container">
+
+        <!-- Thread Information -->
+        <div class="thread-item" id="thread-info">
+          <div class="thread-item__main">
+            <p class="thread-item__name" id="thread-title">Loading...</p>
+            <p class="thread-item__creator" id="thread-creator">Loading...</p>
+          </div>
+
+          <div class="thread-item__description">
+            <p id="thread-description">Loading...</p>
+          </div>
+        </div>
+
+        <!-- Post Creator -->
+        <div class="post-creator" id="post-creator-section">
+          <form id="createPostForm" name="CreatePost">
+
+            <label for="content">
               <textarea id="content"
                         name="content"
                         placeholder="Post content..."
                         required
                         maxlength="400"></textarea>
-          </label>
-          <button id="postPostBtn" type="submit">Post</button>
-        </form>
+            </label>
+
+            <button id="postPostBtn" type="submit">Post</button>
+
+          </form>
+        </div>
+
+        <!-- Posts List -->
+        <ul class="postList" id="postList">
+          <li class="loading-item">Loading posts...</li>
+        </ul>
+
       </div>
+    </section>
 
-      <!-- Posts List -->
-      <ul class="postList" id="postList">
-        <li class="loading-item">Loading posts...</li>
+  </main>
+
+  <footer>
+    <div class="container">
+      <ul>
+        <li><a href="#main">home</a></li>
+        <li><a href="#">contact</a></li>
       </ul>
-
     </div>
-  </section>
-</main>
-
-<footer>
-  <div class="container">
-    <ul>
-      <li><a href="../index.html">home</a></li>
-      <li><a href="#">contact</a></li>
-    </ul>
-  </div>
-</footer>
+  </footer>
 
 <script type="module">
   import { AuthUtils } from '../js/modules/authUtils.js';

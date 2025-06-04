@@ -1,6 +1,8 @@
 @import "pages/main-page.css";
 @import "components/components.css";
 @import "pages/thread-page__styles.css";
+@import "pages/post-page__styles.css";
+@import "adaptive/adaptive.css";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Rubik:wght@300..900&display=swap");
 * {
   margin: 0;
@@ -41,6 +43,13 @@ body {
 }
 :root p::selection, :root h1::selection, :root h2::selection, :root h3::selection, :root h4::selection, :root h5::selection, :root h6::selection, :root label::selection, :root a::selection, :root li::selection, :root span::selection {
   background-color: #F7C005;
+}
+
+.profile-link a {
+  color: #fff;
+  background: #005cd2;
+  padding: 0.35rem 0.75rem;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

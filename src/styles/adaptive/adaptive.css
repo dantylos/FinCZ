@@ -1,0 +1,141 @@
+@media screen and (max-width: 1250px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  header .container nav .left-menu-list {
+    display: flex;
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 880px) {
+  header .container nav .left-menu-list {
+    display: flex;
+    gap: 2rem;
+  }
+  header .container nav .left-menu-list li a {
+    color: #fff;
+    text-transform: lowercase;
+    letter-spacing: 0.15rem;
+    transition: 0.1s;
+    font-size: 12px;
+  }
+  main {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  main aside {
+    display: none;
+  }
+  .thread-main .post .container .postList .post-item .post-body .post-content-preview {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 560px) {
+  .policy-modal .modal-content {
+    width: 96%;
+    padding: 1.5rem 1rem 1.25rem;
+  }
+  .policy-modal .modal-content .policy-modal .modal-content .modal-body {
+    max-height: 70vh;
+    margin-top: 1.5rem;
+  }
+  main #main-wrapper .container #threadList .thread-item__info .thread-item__name {
+    font-size: 1.25rem;
+    line-height: 20px;
+  }
+  main #main-wrapper .container #threadList .thread-item__info .thread-item__created-label {
+    font-size: 0.75rem;
+  }
+  main #main-wrapper .container #threadList .thread-item__info .thread-item__created-date {
+    font-size: 0.8rem;
+  }
+  main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-title {
+    font-size: 1rem;
+  }
+  main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-date {
+    font-size: 0.8rem;
+    letter-spacing: 0.3px;
+  }
+}
+@media screen and (max-width: 460px) {
+  .modal {
+    min-width: inherit;
+  }
+  .thread-main .post .container .thread-item .thread-item__creator {
+    font-size: 0.65rem;
+    display: block;
+  }
+  .thread-main .post .container .thread-item .thread-item__main .thread-item__name {
+    font-size: 1.1rem;
+    line-height: 20px;
+    margin-bottom: 8px;
+  }
+  .thread-main .post .container .thread-item .thread-item__description p {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 426px) {
+  main {
+    padding-top: 2.5rem;
+  }
+  main #main-wrapper .container .search-input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  main #main-wrapper .container .search-container {
+    gap: 1rem;
+  }
+  main #main-wrapper .container .thread-creator #createThreadForm label input[type=text] {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  .search-input::placeholder {
+    font-size: 0.8rem;
+  }
+  main #main-wrapper .container .thread-creator #createThreadForm label textarea::placeholder {
+    font-size: 0.8rem;
+  }
+  main #main-wrapper .container .thread-creator #createThreadForm label select {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
+  main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn {
+    padding: 10px;
+    width: 4rem;
+  }
+  main #main-wrapper .container #threadList {
+    margin-top: 3rem;
+  }
+  main #main-wrapper .container #threadList .thread-item__info .thread-item__creator {
+    font-size: 0.7rem;
+    margin-top: 4px;
+  }
+  .thread-main .post .container .postList .post-item .post-body .post-view-full {
+    font-size: 0.85rem;
+  }
+}
+@media screen and (max-width: 376px) {
+  main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-title {
+    font-size: 0.85rem;
+  }
+  main #main-wrapper .container #threadList .thread-item__lastpost .thread-item__lastpost-date {
+    font-size: 0.7rem;
+  }
+  main #main-wrapper .container #threadList .thread-item__info .thread-item__name {
+    font-size: 1.1rem;
+  }
+  .thread-main .post .container .thread-item .thread-item__main .thread-item__name {
+    font-size: 1rem;
+  }
+  .thread-main .post .container .thread-item .thread-item__creator {
+    font-size: 0.6rem;
+  }
+  .thread-main .post .container .postList .post-item .post-body .post-content-preview {
+    font-size: 0.85rem;
+  }
+}
+
+/*# sourceMappingURL=adaptive.css.map */

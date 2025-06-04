@@ -1,6 +1,5 @@
 import { initAuthModal } from './modules/auth-modal.js';
 import { initSearch } from './modules/search.js';
-import { initTrending } from './modules/trending.js';
 import { initCookieConsent } from './modules/cookie-consent.js';
 import { initValidation } from './modules/validation.js';
 import { initSecurityQuestion } from './modules/security-question.js';
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize other modules
   initAuthModal();
   initSearch();
-  initTrending();
+  initCookieConsent();
   initValidation();
   initFormHandler();
   initThreadCreator();

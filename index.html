@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>FinanceCZ</title>
     <link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
   <!-- Header -->
-  <header>
+  <header id="header">
     <div class="container">
       
-      <a class="logo" href="index.html"><div class="logo-img"><img src="src/assets/icons/logo1.svg" alt="Logo"></div></a>
+      <a class="logo" href="index.html"><div class="logo-img"><img src="src/assets/icons/logo.svg" alt="Logo"></div></a>
 
       <nav>
           <ul class="left-menu-list">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Account</a></li>
+            <li><a href="#"></a></li>
             <li><a href="#">Topics</a></li>
           </ul>
 
           <ul class="right-menu-list">
-            <!--Make search component -->
-            <li>
-              <search>
-
-              </search>
+            <li class="profile-link">
+              <a href="/src/pages/account.html">Profile</a>
             </li>
             <li>
               <button id="signInBtn" class="sign-in-btn">Sign In</button>
@@ -282,14 +278,14 @@
 
 
   <!-- Main -->
-  <main>
+  <main id="main">
     <section id="main-wrapper">
       <div class="container">
         <div class="search-container">
 
-          <button class="avatar-button" aria-label="User profile">
-            <img src="/src/assets/icons/avatar_1.svg" alt="User avatar" class="avatar-image">
-          </button>
+          <div class="search" aria-label="Search">
+            <img src="/src/assets/icons/search.svg" alt="Search" class="search-image">
+          </div>
 
           <form role="search" class="search-form">
             <label for="search-input" class="visually-hidden"></label>
@@ -356,7 +352,7 @@
             </div>
 
             <div class="thread-item__lastpost">
-              <p class="thread-item__lastpost-title">Last post in thread name</p>
+              <p class="thread-item__lastpost-title">Last post is <br /> thread name</p>
               <p class="thread-item__lastpost-date">when was made</p>
             </div>
 
@@ -381,10 +377,22 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">contact</a></li>
-      </ul>
+      <div class="top-button"><a href="#main">Back to top</a></div>
+
+      <div class="follow-links">
+        <p>Follow us</p>
+        <ul>
+          <li><a href="https://github.com/dantylos/FinanceCZ" target="_blank"><img src="src/assets/icons/github.svg" alt="GitHub"></a></li>
+
+          <li><a href="#" ><img src="src/assets/icons/in.svg" alt="In"></a></li>
+
+          <li><a href="#"><img src="src/assets/icons/telegram.svg" alt="Telegram"></a></li>
+        </ul>
+      </div>
+
+      <div class="down-menu">
+        <p>© 2025 FinanceCZ — All rights reserved.</p>
+      </div>
     </div>
   </footer>
 
