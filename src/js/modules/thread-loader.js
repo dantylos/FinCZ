@@ -1,9 +1,9 @@
 import { qs } from '../utils/dom-utils.js';
 
-// API URL для получения тредов
+// API URL for threads retrieving
 const API_BASE_URL = 'https://financecz.onrender.com/api/threads';
 
-// Функция для загрузки тредов с сервера
+// Fetch info about a certain post
 const fetchThreads = async () => {
     try {
         const response = await fetch(API_BASE_URL);
@@ -17,12 +17,11 @@ const fetchThreads = async () => {
     }
 };
 
-// Функция для создания HTML элемента треда
+// Creating an HTML thread element
 const createThreadElement = (thread) => {
     const li = document.createElement('li');
     li.className = 'thread-item';
 
-    // Формируем HTML для последнего поста
     let lastPostHtml = '';
     if (thread.last_post && thread.last_post.preview) {
         lastPostHtml = `
