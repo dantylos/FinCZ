@@ -1,9 +1,6 @@
 .thread-header .container {
   display: flex;
 }
-.thread-header .container .logo {
-  top: -2px;
-}
 
 .thread-main {
   width: 100%;
@@ -90,7 +87,7 @@
   width: 100%;
   padding: 12px 16px;
   border: 1px solid #8e8e8e;
-  background-color: #444545;
+  background-color: #454545;
   color: #e1e0e0;
   font-size: 1rem;
   font-family: "Lato", sans-serif;
@@ -102,7 +99,7 @@
 .thread-main .post .container .post-creator textarea::placeholder {
   color: #8a8a8a;
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: 1rem;
   letter-spacing: 1px;
 }
 .thread-main .post .container .post-creator textarea:focus {

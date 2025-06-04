@@ -1,13 +1,16 @@
 header {
   opacity: 80%;
-  background-color: #050505;
+  background: rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   padding: 0.75rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 999;
 }
 header .container {
-  max-width: inherit;
+  max-width: 1440px;
   position: relative;
 }
 header .container nav {
@@ -18,18 +21,29 @@ header .container nav {
 }
 header .container nav .left-menu-list {
   display: flex;
-  gap: 6rem;
+  gap: 4rem;
 }
-header .container nav .left-menu-list li a {
+header .container nav .left-menu-list li {
+  width: 22px;
+  height: 22px;
+}
+header .container nav .left-menu-list li #down-link {
   color: #fff;
-  text-transform: lowercase;
-  font-size: 0.8rem;
-  letter-spacing: 0.15rem;
-  transition: 0.1s;
+  transition: 0.15s;
 }
-header .container nav .left-menu-list li a:hover {
-  transform: scale(1.05);
-  color: #c0c0c0;
+header .container nav .left-menu-list li #down-link:hover {
+  transform: translateY(2px);
+}
+header .container nav .left-menu-list li #down-link:active {
+  color: #f4c600;
+}
+header .container nav .left-menu-list li a img {
+  display: block;
+  width: 100%;
+  transition: 0.15s;
+}
+header .container nav .left-menu-list li a img:hover {
+  transform: scale(1.1);
 }
 header .container nav .right-menu-list {
   display: flex;
@@ -40,21 +54,26 @@ header .container nav .right-menu-list .profile-link a {
   display: none;
 }
 header .container nav .right-menu-list li .sign-in-btn {
-  background-color: #e8b304;
+  background-color: #f4c600;
   font-size: 1rem;
   color: #fff;
-  border-radius: 0.5rem;
-  padding: 0.3rem 0.5rem 0.25rem;
+  border-radius: 10px;
+  padding: 0.5rem 1rem 0.4rem;
   word-spacing: 0.15rem;
   letter-spacing: 0.1rem;
   font-weight: 500;
   border: none;
   cursor: pointer;
+  transition: 0.15s;
+}
+header .container nav .right-menu-list li .sign-in-btn:hover {
+  background-color: #FF9900;
+  padding: 0.5rem 1.25rem 0.4rem;
 }
 header .container .logo {
   position: absolute;
   left: calc(50% - 14px);
-  top: -4px;
+  top: -2px;
 }
 header .container .logo .logo-img {
   max-width: 296px;
@@ -66,7 +85,7 @@ header .container .logo .logo-img img {
 
 main {
   background-color: #0B0824;
-  padding-top: 4rem;
+  padding: 6rem 0 3rem;
   display: flex;
   justify-content: center;
   gap: 3rem;
@@ -146,7 +165,7 @@ main #main-wrapper .container .thread-creator #createThreadForm label textarea,
 main #main-wrapper .container .thread-creator #createThreadForm label select {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #8e8e8e;
+  border: none;
   border-radius: 12px;
   background-color: #454545;
   color: #e0e0e0;
@@ -159,7 +178,7 @@ main #main-wrapper .container .thread-creator #createThreadForm label select {
 main #main-wrapper .container .thread-creator #createThreadForm label input[type=text]::placeholder,
 main #main-wrapper .container .thread-creator #createThreadForm label textarea::placeholder,
 main #main-wrapper .container .thread-creator #createThreadForm label select::placeholder {
-  color: #8a8a8a;
+  color: #bfbfbf;
   font-style: italic;
 }
 main #main-wrapper .container .thread-creator #createThreadForm label input[type=text]:focus,
@@ -180,9 +199,12 @@ main #main-wrapper .container .thread-creator #createThreadForm label select {
   appearance: none;
   background-size: 16px 16px;
 }
+main #main-wrapper .container .thread-creator #createThreadForm label select:first-of-type {
+  color: #bfbfbf;
+}
 main #main-wrapper .container .thread-creator #createThreadForm #postThreadBtn {
   align-self: end;
-  background-color: #e8b304;
+  background-color: #f4c600;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -222,9 +244,13 @@ main #main-wrapper .container #threadList .thread-item {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border: 2px solid #454545;
   box-sizing: border-box;
   position: relative;
+  transition: 0.15s;
+}
+main #main-wrapper .container #threadList .thread-item:hover {
+  border: 1px solid #454545;
+  background-color: #0051bc;
 }
 main #main-wrapper .container #threadList .thread-item a {
   inset: 0;
@@ -284,7 +310,7 @@ main aside {
   gap: 20px;
   padding: 15px 20px;
   min-width: 320px;
-  max-width: 320px;
+  max-width: 360px;
 }
 main aside .box {
   background-color: black;
