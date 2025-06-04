@@ -22,9 +22,7 @@
 
   header .container nav .left-menu-list li a{
     color: #fff;
-    text-transform: lowercase;
-    letter-spacing: 0.15rem;
-    transition: 0.1s;
+    letter-spacing: 0.1rem;
     font-size: 12px;
   }
 
@@ -58,6 +56,14 @@
     }
   }
 
+  header{
+    padding: 0.75rem;
+  }
+
+  header .container nav .left-menu-list {
+    gap: 1.5rem;
+  }
+
   main #main-wrapper .container #threadList .thread-item__info .thread-item__name {
     font-size: 1.25rem;
     line-height: 20px;
@@ -85,6 +91,19 @@
     min-width: inherit;
   }
 
+  header{
+    padding: 0.75rem 0.25rem;
+  }
+
+  header .container nav .left-menu-list {
+    gap: 1.25rem;
+  }
+
+  header .container nav .left-menu-list li {
+    width: 20px;
+    height: 20px;
+  }
+
   .thread-main .post .container .thread-item .thread-item__creator {
     font-size: 0.65rem;
     display: block;
@@ -103,6 +122,19 @@
 
 
 @media screen and (max-width: 426px) {
+  header .container nav .left-menu-list .header-item{
+    display: none;
+  }
+
+  header .container nav .right-menu-list li .sign-in-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  header .container nav .left-menu-list li {
+    height: 24px;
+  }
+
   main {
     padding-top: 2.5rem;
   }
@@ -181,5 +213,9 @@
 
   .thread-main .post .container .postList .post-item .post-body .post-content-preview {
     font-size: 0.85rem;
+  }
+
+  .post-main .container #createCommentForm button {
+    padding: 0.5rem;
   }
 }
