@@ -1,4 +1,5 @@
 # FinanceCZ
+FinanceCZ is a web platform designed to facilitate communication and knowledge sharing about the world of finance. The core idea is to foster human interaction by allowing users to create posts (threads), comment on discussions, and stay updated with live stock indices and rates. This community-driven site acts as a hub for finance enthusiasts to exchange ideas and insights.
 
 ## What is this project about?
 Czech Financial Forum is a practical showcase of multi-service secured web application built secure-by-design demonstrating protection from various types of attacks like HTML shielding, database queries parameterization and CORS policy configuration.
