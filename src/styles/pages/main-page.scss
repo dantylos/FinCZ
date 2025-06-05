@@ -30,7 +30,6 @@ $red: #e51313;
 
 // Header
 header{
-  opacity: 80%;
   background: rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
@@ -91,6 +90,24 @@ header{
         .profile-link{
           a{
             display: none;
+            color: #fff;
+            background: #005cd2;
+            padding: 0.35rem 1.5rem;
+            border-radius: 10px;
+          }
+        }
+
+        #authDisplay{
+          a{
+            color: #b4d0ff;
+            letter-spacing: 2px;
+            font-size: 20px;
+            font-weight: 400;
+            transition: 0.25s;
+
+            &:hover{
+              color: #b5a6ff;
+            }
           }
         }
 
@@ -98,7 +115,7 @@ header{
           .sign-in-btn{
             background-color: $yello;
             font-size: 1rem;
-            color: $white;
+            color: $black;
             border-radius: 10px;
             padding: 0.5rem 1rem 0.4rem;
             word-spacing: 0.15rem;
@@ -110,7 +127,8 @@ header{
 
             &:hover{
               background-color: $orange;
-              padding: 0.5rem 1.25rem 0.4rem;;
+              padding: 0.5rem 1.25rem 0.4rem;
+              color: $white;
             }
           }
         }
@@ -398,7 +416,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 15px 20px;
+    padding-right: 20px;
     min-width: 320px;
     max-width: 360px;
 
