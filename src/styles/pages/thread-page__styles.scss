@@ -2,9 +2,21 @@
 .thread-header{
   .container{
     display: flex;
+
+    .profile-link{
+      a{
+        color: #fff;
+        background: #005cd2;
+        padding: 0.35rem 1.5rem;
+        border-radius: 10px;
+      }
+    }
+
+    .logo{
+      top: -6px;
+    }
   }
 }
-
 
 // Thread-main
 .thread-main{

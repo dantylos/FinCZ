@@ -1,5 +1,4 @@
 header {
-  opacity: 80%;
   background: rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
@@ -52,11 +51,25 @@ header .container nav .right-menu-list {
 }
 header .container nav .right-menu-list .profile-link a {
   display: none;
+  color: #fff;
+  background: #005cd2;
+  padding: 0.35rem 1.5rem;
+  border-radius: 10px;
+}
+header .container nav .right-menu-list #authDisplay a {
+  color: #b4d0ff;
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 400;
+  transition: 0.25s;
+}
+header .container nav .right-menu-list #authDisplay a:hover {
+  color: #b5a6ff;
 }
 header .container nav .right-menu-list li .sign-in-btn {
   background-color: #f4c600;
   font-size: 1rem;
-  color: #fff;
+  color: #050505;
   border-radius: 10px;
   padding: 0.5rem 1rem 0.4rem;
   word-spacing: 0.15rem;
@@ -69,6 +82,7 @@ header .container nav .right-menu-list li .sign-in-btn {
 header .container nav .right-menu-list li .sign-in-btn:hover {
   background-color: #FF9900;
   padding: 0.5rem 1.25rem 0.4rem;
+  color: #fff;
 }
 header .container .logo {
   position: absolute;
@@ -308,7 +322,7 @@ main aside {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 15px 20px;
+  padding-right: 20px;
   min-width: 320px;
   max-width: 360px;
 }
