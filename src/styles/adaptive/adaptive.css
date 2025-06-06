@@ -46,6 +46,9 @@
   header .container nav .left-menu-list {
     gap: 1.5rem;
   }
+  header .container nav .right-menu-list #authDisplay {
+    padding: 0.35rem 1rem;
+  }
   main #main-wrapper .container #threadList .thread-item__info .thread-item__name {
     font-size: 1.25rem;
     line-height: 20px;
