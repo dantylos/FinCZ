@@ -14,7 +14,7 @@ Czech Financial Forum is a practical showcase of multi-service secured web appli
 
 ## IP filtering and decoy mechanism
 CzFF has an implemented IP filtering mechanism, which prevents all the unwanted (coming outside of Czech Republic) traffic. Third party solution from ip-api was used for IP geolocation and VPN/Proxy detection. All the incoming traffic  Additionally, on this level strict CORS policy for accepted domains is implemented to prevent CSRF attacks.
-Additionally, special decoy webpage with simulation of a realistic infitine loading screen, whcich will help to make it harder to probe our security measures for unwanted traffic.
+For all unwanted traffic is not obviusly blocked, but just all API requests are rejected on Back-End side, leaving at a glance working website, but withput any fucntionality. This will help to make it harder to probe our security measures for unwanted traffic.
  
 
 ## Technologies Used  
