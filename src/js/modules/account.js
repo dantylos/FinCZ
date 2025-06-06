@@ -1,5 +1,6 @@
 const form = document.getElementById('accountForm');
 const result = document.getElementById('result');
+import { AuthUtils } from './authUtils.js';
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -46,4 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "../../../index.html"; // fallback
         }
     });
+});
+
+// Logout
+document.addEventListener('DOMContentLoaded', () => {
+    const logoutLink = document.getElementById('logout-link');
+    if (logoutLink) {
+        logoutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            AuthUtils.logout();
+        });
+    }
 });
