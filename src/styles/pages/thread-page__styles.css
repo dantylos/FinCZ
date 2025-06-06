@@ -1,15 +1,13 @@
 .thread-header .container {
   display: flex;
 }
-.thread-header .container .logo{
-  top: -6px;
-}
-.thread-header .container .profile-link a{
+.thread-header .container .profile-link a {
   color: #fff;
   background: #005cd2;
   padding: 0.35rem 1.5rem;
   border-radius: 10px;
 }
+
 .thread-main {
   width: 100%;
 }
@@ -210,4 +208,4 @@
   text-decoration: underline;
 }
 
-/*# sourceMappingURL=thread-page__styles.css.map */
+/*# sourceMappingURL=tread-page__styles.css.map */
