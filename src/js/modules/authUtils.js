@@ -74,14 +74,9 @@ export const AuthUtils = {
         localStorage.removeItem('authToken');
     },
 
-    // Checks authentication status
-    isLoggedIn: () => {
-        return !!localStorage.getItem('authToken');
-    },
-
     // Logout
     logout() {
         this.removeToken();
-        window.location.reload();
+        window.location.href = 'index.html';
     }
 };
